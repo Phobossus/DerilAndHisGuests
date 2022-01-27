@@ -1,0 +1,61 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Shout(151)
+		Enemy()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	See([PC])
+	Global("firstUse","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("firstUse","LOCALS",1)
+		
+		DisplayString(Myself, @41)
+		ReallyForceSpell(Myself, WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+		ReallyForceSpell(Myself, WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself, WIZARD_SPELL_IMMUNITY_ABJURATION)
+		
+		ForceSpell(LastSeenBy(Myself),BANSHEE_WAIL)  // SPIN681.SPL (Zawodzenie banshee)
+		
+END
+
+// If in party Jaheira, focuses Jaheira
+IF
+	See(NearestEnemyOf(Myself))
+	InParty("Jaheira")
+	See("Jaheira")
+	Global("VerisNoticedJaheira", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("VerisNoticedJaheira", "GLOBAL", 1)
+		DisplayString(Myself, @40)
+		ReallyForceSpell(LastSeenBy(Myself), WIZARD_HORROR)
+		ReallyForceSpell(LastSeenBy(Myself), WIZARD_FINGER_OF_DEATH)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	See([PC])
+THEN
+	RESPONSE #25
+		Wait(6)
+		ForceSpell(LastSeenBy(Myself), WIZARD_VAMPIRIC_TOUCH)
+	RESPONSE #15
+		Wait(6)
+		ForceSpell(LastSeenBy(Myself), WIZARD_FINGER_OF_DEATH)
+	RESPONSE #25
+		Wait(6)
+		ForceSpell(LastSeenBy(Myself), WIZARD_ANIMATE_DEAD)
+	RESPONSE #35
+		Wait(6)
+		ForceSpell(LastSeenBy(Myself), WIZARD_DIMENSION_DOOR)
+		PlaySound("EFF_M38")
+		Wait(2)	
+		ForceSpell(LastSeenBy(Myself), BANSHEE_WAIL)
+END
+

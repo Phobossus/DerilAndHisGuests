@@ -1,0 +1,21 @@
+1. Jesli minie conajmniej 5 dni, to random encounter miedzy lokacjami:
+Deril, Lagole i reszta, walka ze wszystkimi.
+
+2. Drzwi Unlock dopiero, gdy wracamy z cerndem i zmienna odpowiednia ustawiona.
+- w pokoju beda jacys straznicy, po ich pokonaniu drzwi sie otworza
+
+3. Wsrod gosci: wysoko postawiony zlodziej cienia, reakcje w zaleznosci od twojego statusu
+
+4. Pas zatrzymania czasu jako nagroda? 
+
+5. Quest Derila jednym z N questów, w którym walczymy z grupami stworzen/organizacji (niczym w twisted runes). Zaimplementuje jesli mi sie zachce, zaczniemy tylko od tego encountera z derilem.
+
+6. Oskryptowac Thavina. Niech summonuje demony w walce, troche zmodyfikowac obecny skrypt maga.
+
+C:MoveToArea("AGAR01")
+C:MoveToArea("AGAR01")
+C:CreateItem("SW2H10")
+
+C:CreateCreature("LAROTTLE")
+
+C:GetGlobal("LarotIsHealing","LOCALS") while p

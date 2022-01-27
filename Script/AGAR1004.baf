@@ -1,0 +1,8 @@
+IF
+Global("DerilQuestAccepted","GLOBAL",2)
+
+THEN RESPONSE #100
+	CreateCreature("THAVIN", [457.556], 12)
+
+SetGlobal("DerilQuestAccepted", "GLOBAL", 3) // AR1004 room prepared, creatures spawned
+END

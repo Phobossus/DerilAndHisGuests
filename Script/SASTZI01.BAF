@@ -1,0 +1,67 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Shout(99)
+		Enemy()
+END
+
+// If someone gets close, GTFO and attack him
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),5)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(LastSeenBy(Myself), WIZARD_SLOW)
+		RandomWalkContinuous()
+END
+
+
+// Prioritize MAGES > BARDS > CLERICS
+IF
+	!Range(NearestEnemyOf(Myself),5)
+	See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+	CheckStatLT(NearestEnemyOfType([0.0.0.MAGE_ALL]), 85, RESISTMISSILE)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+IF
+	!Range(NearestEnemyOf(Myself),5)
+	See(NearestEnemyOfType([0.0.0.BARD_ALL]))
+	CheckStatLT(NearestEnemyOfType([0.0.0.BARD_ALL]), 85, RESISTMISSILE)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+IF
+	!Range(NearestEnemyOf(Myself),5)
+	See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+	CheckStatLT(NearestEnemyOfType([0.0.0.CLERIC_ALL]), 85, RESISTMISSILE)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+// If no mages or wizard, attack anyone else nearby
+IF
+	See(NearestEnemyOf(Myself))
+	!Range(NearestEnemyOf(Myself),5)
+	CheckStatLT(NearestEnemyOf(Myself), 85, RESISTMISSILE)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),45)
+END
+

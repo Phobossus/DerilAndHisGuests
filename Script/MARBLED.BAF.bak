@@ -1,0 +1,44 @@
+IF
+	Allegiance(Myself,NEUTRAL)	
+	OR(2)
+	   AttackedBy([GOODCUTOFF],DEFAULT)
+	   Heard([ANYONE],99)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Allegiance(Myself, ENEMY)
+	Global("MarbleDemon", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("MarbleDemon", "GLOBAL", 1)
+		CreateVisualEffectObject("SPBDIMSP",Myself)
+		Wait(1)
+		Polymorph("LICH_BLACK")
+		Wait(1)
+		DisplayStringHead(Myself, @44)
+		SetGlobalTimer("MARBLECHARM", "GLOBAL", THREE_ROUNDS)
+		SetInterrupt(TRUE)
+END
+
+
+IF
+	Allegiance(Myself, ENEMY)
+	See([GOODCUTOFF.0.0.0.0.SUMMONED])
+	GlobalTimerExpired("MARBLECHARM", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		FaceObject(LastSeenBy(Myself))
+		DisplayString(Myself, @45)
+		CreateVisualEffectObject("SPRWRA2i", LastSeenBy(Myself))
+		Wait(2)
+		DisplayStringHead(Myself, @46)
+		ChangeEnemyAlly(LastSeenBy(Myself), ENEMY)
+		SetGlobalTimer("MARBLECHARM", "GLOBAL", THREE_ROUNDS)
+		SetInterrupt(TRUE)
+END
+

@@ -1,0 +1,22 @@
+// Initial dialog
+IF
+	Global("ThavinInit","GLOBAL",0)
+	See([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("ThavinInit","GLOBAL",1)
+		StartDialogNoSet([PC])
+END
+
+// Door unlocks after death
+IF
+	StateCheck(Myself,STATE_REALLY_DEAD)
+	Global("ThavinDefeated", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("ThavinDefeated","GLOBAL",1)
+		CreateVisualEffectObject("SPATTCK1", "Door Object 2")
+		PlaySound("EFF_E01")
+		Unlock("Door Object 2")
+END
+

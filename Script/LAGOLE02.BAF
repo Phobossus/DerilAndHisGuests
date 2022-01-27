@@ -1,0 +1,11 @@
+IF
+	NumTimesTalkedTo(0)
+	!Allegiance(Myself,ENEMY)
+	See([PC])
+	Global("DerilDefeated","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Wait(3)
+		StartDialogNoSet([PC])
+END
+

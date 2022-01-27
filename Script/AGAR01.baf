@@ -1,0 +1,20 @@
+IF 
+	Global("ThavinDefeated", "GLOBAL", 1)
+THEN RESPONSE #100
+	SetGlobal("ThavinDefeated", "GLOBAL", 2)
+	SetGlobal("PrepareGuestRoom", "GLOBAL", 1)
+END
+
+IF
+	Global("PrepareGuestRoom", "GLOBAL", 1)
+THEN RESPONSE #100
+	SetGlobal("PrepareGuestRoom", "GLOBAL", 2)
+
+	CreateCreature("SASTZI", [629.436], 7)
+	CreateCreature("VERISSA", [464.340], 14)
+	CreateCreature("LAGOLE02", [610.281], 0)
+	CreateCreature("DERIL02", [668.303], 6)
+	CreateCreature("LAROTTLE", [557.491], 7)
+	CreateCreature("MARBLED", [400.364], 14)
+	
+END

@@ -1,0 +1,32 @@
+IF
+	NumTimesTalkedTo(0)
+	!Allegiance(Myself,ENEMY)
+	See([PC])
+	Global("DerilNoticedUs","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DerilNoticedUs","GLOBAL",1)
+		Wait(1)
+		StartDialogNoSet([PC])
+END
+
+IF
+	StateCheck(Myself,STATE_REALLY_DEAD)
+	Global("DerilDefeated", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("DerilDefeated","GLOBAL",1)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	See([PC])
+	Global("LagoleLeft", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LagoleLeft", "GLOBAL", 2)
+		Wait(2)
+		StartDialogNoSet([PC])
+END
+
+

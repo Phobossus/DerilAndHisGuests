@@ -1,0 +1,152 @@
+BACKUP ~AGDerilMansionExtended/Backup~
+
+AUTHOR ~malcolmmillennium~
+
+VERSION ~v1.0~
+
+LANGUAGE
+	~Polish~
+	~Polish~
+~AGDerilMansionExtended/Polish/AGsetup.tra~
+~AGDerilMansionExtended/Polish/AGitems.tra~
+~AGDerilMansionExtended/Polish/AGDerilQuests.tra~
+~AGDerilMansionExtended/Polish/AGnames.tra~
+
+BEGIN @1
+
+ADD_JOURNAL @15 USING ~AGDerilMansionExtended\Polish\AGDerilQuests.tra~
+
+//** Scripts
+COMPILE ~AGDerilMansionExtended/Script/AGAR01.baf~
+COMPILE ~AGDerilMansionExtended/Script/AGAR1004.baf~
+COMPILE ~AGDerilMansionExtended/Script/THAVIN01.baf~
+COMPILE ~AGDerilMansionExtended/Script/SASTZI01.baf~
+COMPILE ~AGDerilMansionExtended/Script/VERIS01.baf~
+COMPILE ~AGDerilMansionExtended/Script/LAGOLE02.baf~
+COMPILE ~AGDerilMansionExtended/Script/DERIL02.baf~
+COMPILE ~AGDerilMansionExtended/Script/LAROTT01.baf~
+COMPILE ~AGDerilMansionExtended/Script/MARBLED.baf~
+
+//** Dialogs
+// Existing
+COMPILE ~AGDerilMansionExtended/Dialog/AGCerndJEXT.d~
+COMPILE ~AGDerilMansionExtended/Dialog/AGCerndPEXT.d~
+COMPILE ~AGDerilMansionExtended/Dialog/AGDeril01EXT.d~
+
+// New
+COMPILE ~AGDerilMansionExtended/Dialog/Thavin.d~
+COMPILE ~AGDerilMansionExtended/Dialog/Deril.d~
+COMPILE ~AGDerilMansionExtended/Dialog/Lagole.d~
+COMPILE ~AGDerilMansionExtended/Dialog/Larottle.d~
+COMPILE ~AGDerilMansionExtended/Dialog/Marble.d~
+
+//** Creatures
+// Thavin
+COPY ~AGDerilMansionExtended/CRE/THAVIN.CRE~ ~override/THAVIN.CRE~
+	SAY NAME1 @10
+	SAY NAME2 @10
+	WRITE_ASCII SCRIPT_OVERRIDE ~THAVIN01~
+	WRITE_ASCII DIALOG ~Thavin~
+
+// Sas'Tzi
+COPY ~AGDerilMansionExtended/CRE/SASTZI.CRE~ ~override/SASTZI.CRE~
+	SAY NAME1 @11
+	SAY NAME2 @11
+	WRITE_ASCII SCRIPT_OVERRIDE ~SASTZI01~
+
+// Verissa
+COPY ~AGDerilMansionExtended/CRE/VERISSA.CRE~ ~override/VERISSA.CRE~
+	SAY NAME1 @13
+	SAY NAME2 @13
+	WRITE_ASCII SCRIPT_OVERRIDE ~VERIS01~
+
+// Lagole Gon
+COPY ~AGDerilMansionExtended/CRE/LAGOLE02.CRE~ ~override/LAGOLE02.CRE~
+	WRITE_ASCII SCRIPT_OVERRIDE ~LAGOLE02~
+	WRITE_ASCII DIALOG ~Lagole~
+	
+// Deril
+COPY ~AGDerilMansionExtended/CRE/DERIL02.CRE~ ~override/DERIL02.CRE~
+	WRITE_ASCII SCRIPT_OVERRIDE ~DERIL02~
+	WRITE_ASCII DIALOG ~Deril~
+	
+// Larottle
+COPY ~AGDerilMansionExtended/CRE/LAROTTLE.CRE~ ~override/LAROTTLE.CRE~
+	SAY NAME1 @12
+	SAY NAME2 @12
+	WRITE_ASCII SCRIPT_OVERRIDE ~LAROTT01~
+	WRITE_ASCII DIALOG ~Larottle~
+
+// Lord Marble
+COPY ~AGDerilMansionExtended/CRE/MARBLED.CRE~ ~override/MARBLED.CRE~
+	SAY NAME1 @14
+	SAY NAME2 @14
+	WRITE_ASCII SCRIPT_OVERRIDE ~MARBLED~
+	WRITE_ASCII DIALOG ~MARBLE~
+
+
+// Entrance to Deril's guest room
+COPY_EXISTING ~AR1004.ARE~ ~OVERRIDE~
+// Travel Region at DOOR02 (Deril's guest room)	
+	LPF fj_are_structure
+	  INT_VAR
+	  fj_loc_x       = 347
+      fj_loc_y       = 618
+      fj_orientation = 14   //SE
+	  fj_debug = 1
+      STR_VAR
+      fj_structure_type = entrance
+      fj_name           = Exit490
+	END
+	LPF fj_are_structure
+	  INT_VAR
+	  fj_type         = 2    //travel
+	  fj_box_left     = 208
+	  fj_box_top      = 561
+	  fj_box_right    = 234
+	  fj_box_bottom   = 590
+	  fj_cursor_idx   = 30   //door
+	  fj_vertex_0     = 208 + (561 << 16)
+	  fj_vertex_1     = 234 + (590 << 16)
+	  fj_vertex_2     = 234 + (621 << 16)
+	  fj_vertex_3     = 208 + (599 << 16)
+	  STR_VAR
+	  fj_structure_type   = region
+	  fj_name             = TranAGAR01
+	  fj_destination_area = AGAR01
+	  fj_destination_name = ExitAGAR01
+    END
+
+// Entrance to Deril's main room from Guest Room
+COPY ~AGDerilMansionExtended/ARE/AGAR01.ARE~ ~override/AGAR01.ARE~
+	LPF fj_are_structure
+	  INT_VAR
+	  fj_loc_x       = 304
+      fj_loc_y       = 472
+      fj_orientation = 8   //NE
+	  fj_debug = 1
+      STR_VAR
+      fj_structure_type = entrance
+      fj_name           = ExitAGAR01
+	END
+	LPF fj_are_structure
+	  INT_VAR
+	  fj_type         = 2    //travel
+	  fj_box_left     = 148
+	  fj_box_top      = 526
+	  fj_box_right    = 190
+	  fj_box_bottom   = 609
+	  fj_cursor_idx   = 30   //door
+	  fj_vertex_0     = 148 + (526 << 16)
+	  fj_vertex_1     = 190 + (551 << 16)
+	  fj_vertex_2     = 190 + (609 << 16)
+	  fj_vertex_3     = 148 + (584 << 16)
+	  STR_VAR
+	  fj_structure_type   = region
+	  fj_name             = TranAG1004
+	  fj_destination_area = AR1004
+	  fj_destination_name = Exit490
+    END
+		
+EXTEND_TOP ~AR1004.BCS~ ~AGDerilMansionExtended/Script/AGAR1004.baf~
+		

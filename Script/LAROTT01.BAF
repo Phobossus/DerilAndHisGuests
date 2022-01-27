@@ -1,0 +1,97 @@
+IF
+	Allegiance(Myself,ENEMY)
+	See(NearestEnemyOf(Myself))
+	PartyHasItem("SW2H10")
+	Global("NoticedKarsomir", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("NoticedKarsomir", "GLOBAL", 1)
+		Wait(3)
+		StartDialogNoSet([PC])
+		SetGlobal("StealKarsomir", "GLOBAL", 1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("StealKarsomir", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("StealKarsomir","GLOBAL",2)
+		DisplayString(Myself, @42)  // Przywo?anie artefaktu
+		CreateVisualEffectObject("SPCL239X",Myself)
+		TakePartyItem("SW2H10")  // Karsomir +5
+		Wait(3)
+		DisplayStringHead(Myself, @43)  // Miecz jest wreszcie m?j... ale walka jest twoja, Lagole. Ha ha ha.
+		Wait(1)
+		EscapeArea()
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("NoticedKarsomir", "GLOBAL", 0)
+	HPPercentLT(Myself, 20)
+	GlobalLT("LarotHealsUsed", "LOCALS", 2)
+	Global("LarotIsHealing", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("LarotIsHealing", "LOCALS", 1)
+	
+		IncrementGlobal("LarotHealsUsed", "LOCALS", 1)
+		CreateVisualEffectObject("SPCCOLDE",Myself)
+		ReallyForceSpell(Myself, WIZARD_INVISIBILITY)
+		RandomWalkTime(2)
+		ForceSpell(Myself, CLERIC_HEAL)
+		
+		SetGlobal("LarotIsHealing", "LOCALS", 0)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("NoticedKarsomir", "GLOBAL", 0)
+	HP(Myself, 1)
+	Global("LarotHealsUsed", "LOCALS", 2)
+	Global("LarotDefeated", "GLOBAL", 0)
+	Global("LarotIsHealing", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("LarotDefeated", "GLOBAL", 1)
+		StartDialogNoSet([PC])
+		EscapeArea()
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("NoticedKarsomir", "GLOBAL", 0)
+	Global("LarotDefeated", "GLOBAL", 0)
+    Global("LarotIsHealing", "LOCALS", 0)
+	See(NearestEnemyOf(Myself))
+	HPLT(NearestEnemyOf(Myself), 60)
+	OR(2)
+		Global("PowerWordOpener", "GLOBAL", 0)
+		GlobalTimerExpired("NextPowerWordKill", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("PowerWordOpener", "GLOBAL", 1)
+		SetGlobalTimer("NextPowerWordKill","GLOBAL",THREE_ROUNDS)
+		ForceSpell(LastSeenBy(Myself), WIZARD_POWER_WORD_KILL)
+END
+	
+IF
+	Global("NoticedKarsomir", "GLOBAL", 0)
+	Global("LarotDefeated", "GLOBAL", 0)
+    Global("LarotIsHealing", "LOCALS", 0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #75
+		AttackReevaluate(LastSeenBy(Myself),30)
+	RESPONSE #25
+		ForceSpell(LastSeenBy(Myself), WIZARD_REMOVE_MAGIC)
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+
+
