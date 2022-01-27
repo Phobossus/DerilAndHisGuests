@@ -9,4 +9,3 @@ IF ~Global("LarotDefeated", "GLOBAL", 1)~ THEN BEGIN 1
 	SAY ~Dość... Nie zamierzam ginąć za tę zbieraninę słabeuszy. Larottle ma ważniejsze sprawy na głowie.~
 	IF ~~ THEN EXIT
 END
-

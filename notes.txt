@@ -17,5 +17,10 @@ C:MoveToArea("AGAR01")
 C:CreateItem("SW2H10")
 
 C:CreateCreature("LAROTTLE")
+C:CreateCreature("MARBLED")
 
 C:GetGlobal("LarotIsHealing","LOCALS") while p
+
+
+	IF ~ReputationLT(Player1, 16)~ THEN REPLY ~~
+	IF ~ReputationGT(Player1, 15)~ THEN REPLY ~~

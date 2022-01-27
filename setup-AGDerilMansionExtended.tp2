@@ -39,6 +39,7 @@ COMPILE ~AGDerilMansionExtended/Dialog/Deril.d~
 COMPILE ~AGDerilMansionExtended/Dialog/Lagole.d~
 COMPILE ~AGDerilMansionExtended/Dialog/Larottle.d~
 COMPILE ~AGDerilMansionExtended/Dialog/Marble.d~
+COMPILE ~AGDerilMansionExtended/Dialog/Verissa.d~
 
 //** Creatures
 // Thavin
@@ -59,6 +60,7 @@ COPY ~AGDerilMansionExtended/CRE/VERISSA.CRE~ ~override/VERISSA.CRE~
 	SAY NAME1 @13
 	SAY NAME2 @13
 	WRITE_ASCII SCRIPT_OVERRIDE ~VERIS01~
+	WRITE_ASCII DIALOG ~Verissa~
 
 // Lagole Gon
 COPY ~AGDerilMansionExtended/CRE/LAGOLE02.CRE~ ~override/LAGOLE02.CRE~
