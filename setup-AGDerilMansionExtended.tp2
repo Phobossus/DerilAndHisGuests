@@ -29,17 +29,18 @@ COMPILE ~AGDerilMansionExtended/Script/MARBLED.baf~
 
 //** Dialogs
 // Existing
-COMPILE ~AGDerilMansionExtended/Dialog/AGCerndJEXT.d~
-COMPILE ~AGDerilMansionExtended/Dialog/AGCerndPEXT.d~
-COMPILE ~AGDerilMansionExtended/Dialog/AGDeril01EXT.d~
 
-// New
-COMPILE ~AGDerilMansionExtended/Dialog/Thavin.d~
-COMPILE ~AGDerilMansionExtended/Dialog/Deril.d~
-COMPILE ~AGDerilMansionExtended/Dialog/Lagole.d~
-COMPILE ~AGDerilMansionExtended/Dialog/Larottle.d~
-COMPILE ~AGDerilMansionExtended/Dialog/Marble.d~
-COMPILE ~AGDerilMansionExtended/Dialog/Verissa.d~
+
+COMPILE 
+ ~AGDerilMansionExtended/Dialog/AGCerndPEXT.d~
+ ~AGDerilMansionExtended/Dialog/AGDeril01EXT.d~
+ ~AGDerilMansionExtended/Dialog/AGCERNDJ.d~
+ ~AGDerilMansionExtended/Dialog/Thavin.d~
+ ~AGDerilMansionExtended/Dialog/Deril.d~
+ ~AGDerilMansionExtended/Dialog/Lagole.d~
+ ~AGDerilMansionExtended/Dialog/Larottle.d~
+ ~AGDerilMansionExtended/Dialog/Marble.d~
+ ~AGDerilMansionExtended/Dialog/Verissa.d~
 
 //** Creatures
 // Thavin

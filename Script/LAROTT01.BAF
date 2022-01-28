@@ -8,7 +8,7 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("NoticedKarsomir", "GLOBAL", 1)
 		Wait(3)
-		StartDialogNoSet([PC])
+		StartDialogNoSet(Player1)
 		SetGlobal("StealKarsomir", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 END

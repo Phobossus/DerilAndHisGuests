@@ -13,12 +13,13 @@ END
 
 IF ~~ THEN BEGIN 2
 	SAY ~Zobaczcie na własne oczy jak kończą ci, którzy wtykają nos tam, gdzie nie trzeba! Udowodnię swój potencjał!~
+	IF ~InParty("CERND")~ THEN DO ~Enemy()~ EXTERN ~CERNDJ~ DerilNotOver06
 	IF ~~ THEN DO ~Enemy()~ EXIT
 END
 
 /*IF ~Global("LagoleLeft", "GLOBAL", 2)~ THEN BEGIN 3
 	SAY ~Kosztowaliście mnie wieczność i postaram się odpłacić się wam z nawiązką!~
-	//IF ~InParty("CERND")~ THEN DO ~Enemy()~ EXTERN ~CERNDJ~ ReactToLich
+	IF ~InParty("CERND")~ THEN DO ~Enemy()~ EXTERN ~CERNDJ~ ReactToLich
 	//IF ~InParty("KELDORN")~ THEN DO ~Enemy()~ EXTERN ~KELDORJ~ ReactToLich
 	IF ~~ THEN DO ~Enemy()~ EXIT
 END

@@ -24,3 +24,8 @@ C:GetGlobal("LarotIsHealing","LOCALS") while p
 
 	IF ~ReputationLT(Player1, 16)~ THEN REPLY ~~
 	IF ~ReputationGT(Player1, 15)~ THEN REPLY ~~
+
+7. Fixy dla Larottle i Banshee
+- Shout: nie leciec do tego kto krzyczy bo to bez sensu w tym pokoju
+8. Visibility
+- upewnic sie, ze nie da sie schowac przed czescia przeciwnikow za mgla wojny
