@@ -16,6 +16,13 @@ BEGIN @1
 
 ADD_JOURNAL @15 USING ~AGDerilMansionExtended\Polish\AGDerilQuests.tra~
 
+
+//** Sounds 
+// Larotte
+COPY ~AGDerilMansionExtended/Polish/LarotP03.WAV~ ~override/~
+COPY ~AGDerilMansionExtended/Polish/LarotP04.WAV~ ~override/~
+COPY ~AGDerilMansionExtended/Polish/LarotP06.WAV~ ~override/~
+
 //** Scripts
 COMPILE ~AGDerilMansionExtended/Script/AGAR01.baf~
 COMPILE ~AGDerilMansionExtended/Script/AGAR1004.baf~
@@ -26,62 +33,72 @@ COMPILE ~AGDerilMansionExtended/Script/LAGOLE02.baf~
 COMPILE ~AGDerilMansionExtended/Script/DERIL02.baf~
 COMPILE ~AGDerilMansionExtended/Script/LAROTT01.baf~
 COMPILE ~AGDerilMansionExtended/Script/MARBLED.baf~
-
-//** Dialogs
-// Existing
+COMPILE ~AGDerilMansionExtended/Script/AGSHOUT.baf~
 
 
 COMPILE 
+//** Dialogs
+
+// Existing
  ~AGDerilMansionExtended/Dialog/AGCerndPEXT.d~
  ~AGDerilMansionExtended/Dialog/AGDeril01EXT.d~
  ~AGDerilMansionExtended/Dialog/AGCERNDJ.d~
+ ~AGDerilMansionExtended/Dialog/AGKELDJ.d~
+ 
+// New
  ~AGDerilMansionExtended/Dialog/Thavin.d~
  ~AGDerilMansionExtended/Dialog/Deril.d~
  ~AGDerilMansionExtended/Dialog/Lagole.d~
  ~AGDerilMansionExtended/Dialog/Larottle.d~
  ~AGDerilMansionExtended/Dialog/Marble.d~
  ~AGDerilMansionExtended/Dialog/Verissa.d~
-
+ 
 //** Creatures
 // Thavin
-COPY ~AGDerilMansionExtended/CRE/THAVIN.CRE~ ~override/THAVIN.CRE~
+COPY ~AGDerilMansionExtended/CRE/THAVIN.CRE~ ~override/~
 	SAY NAME1 @10
 	SAY NAME2 @10
 	WRITE_ASCII SCRIPT_OVERRIDE ~THAVIN01~
 	WRITE_ASCII DIALOG ~Thavin~
 
 // Sas'Tzi
-COPY ~AGDerilMansionExtended/CRE/SASTZI.CRE~ ~override/SASTZI.CRE~
+COPY ~AGDerilMansionExtended/CRE/SASTZI.CRE~ ~override/~
 	SAY NAME1 @11
 	SAY NAME2 @11
 	WRITE_ASCII SCRIPT_OVERRIDE ~SASTZI01~
 
 // Verissa
-COPY ~AGDerilMansionExtended/CRE/VERISSA.CRE~ ~override/VERISSA.CRE~
+COPY ~AGDerilMansionExtended/CRE/VERISSA.CRE~ ~override/~
 	SAY NAME1 @13
 	SAY NAME2 @13
 	WRITE_ASCII SCRIPT_OVERRIDE ~VERIS01~
+	WRITE_ASCII SCRIPT_DEFAULT ~AGSHOUT~
 	WRITE_ASCII DIALOG ~Verissa~
 
 // Lagole Gon
-COPY ~AGDerilMansionExtended/CRE/LAGOLE02.CRE~ ~override/LAGOLE02.CRE~
+COPY ~AGDerilMansionExtended/CRE/LAGOLE02.CRE~ ~override/~
 	WRITE_ASCII SCRIPT_OVERRIDE ~LAGOLE02~
 	WRITE_ASCII DIALOG ~Lagole~
 	
 // Deril
-COPY ~AGDerilMansionExtended/CRE/DERIL02.CRE~ ~override/DERIL02.CRE~
+COPY ~AGDerilMansionExtended/CRE/DERIL02.CRE~ ~override/~
 	WRITE_ASCII SCRIPT_OVERRIDE ~DERIL02~
 	WRITE_ASCII DIALOG ~Deril~
 	
 // Larottle
-COPY ~AGDerilMansionExtended/CRE/LAROTTLE.CRE~ ~override/LAROTTLE.CRE~
+COPY ~AGDerilMansionExtended/CRE/LAROTTLE.CRE~ ~override/~
 	SAY NAME1 @12
 	SAY NAME2 @12
 	WRITE_ASCII SCRIPT_OVERRIDE ~LAROTT01~
+	WRITE_ASCII SCRIPT_DEFAULT ~AGSHOUT~
 	WRITE_ASCII DIALOG ~Larottle~
+	SAY SELECT_COMMON1 @47
+	SAY SELECT_COMMON2 @48
+	SAY BATTLE_CRY1 @47
+	SAY BATTLE_CRY2 @48
 
 // Lord Marble
-COPY ~AGDerilMansionExtended/CRE/MARBLED.CRE~ ~override/MARBLED.CRE~
+COPY ~AGDerilMansionExtended/CRE/MARBLED.CRE~ ~override/~
 	SAY NAME1 @14
 	SAY NAME2 @14
 	WRITE_ASCII SCRIPT_OVERRIDE ~MARBLED~
@@ -121,7 +138,7 @@ COPY_EXISTING ~AR1004.ARE~ ~OVERRIDE~
     END
 
 // Entrance to Deril's main room from Guest Room
-COPY ~AGDerilMansionExtended/ARE/AGAR01.ARE~ ~override/AGAR01.ARE~
+COPY ~AGDerilMansionExtended/ARE/AGAR01.ARE~ ~override/~
 	LPF fj_are_structure
 	  INT_VAR
 	  fj_loc_x       = 304

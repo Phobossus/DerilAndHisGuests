@@ -15,7 +15,8 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("ThavinDefeated","GLOBAL",1)
-		CreateVisualEffectObject("SPATTCK1", "Door Object 2")
+		//CreateVisualEffectObject("SPATTCK1", "Door Object 2")
+		CreateVisualEffect("SPATTCK1",[241.602])
 		PlaySound("EFF_E01")
 		Unlock("Door Object 2")
 END

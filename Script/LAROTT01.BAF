@@ -86,9 +86,9 @@ IF
     Global("LarotIsHealing", "LOCALS", 0)
 	See(NearestEnemyOf(Myself))
 THEN
-	RESPONSE #75
+	RESPONSE #85
 		AttackReevaluate(LastSeenBy(Myself),30)
-	RESPONSE #25
+	RESPONSE #15
 		ForceSpell(LastSeenBy(Myself), WIZARD_REMOVE_MAGIC)
 		AttackReevaluate(LastSeenBy(Myself),30)
 END

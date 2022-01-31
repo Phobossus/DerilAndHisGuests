@@ -4,13 +4,9 @@ Deril, Lagole i reszta, walka ze wszystkimi.
 2. Drzwi Unlock dopiero, gdy wracamy z cerndem i zmienna odpowiednia ustawiona.
 - w pokoju beda jacys straznicy, po ich pokonaniu drzwi sie otworza
 
-3. Wsrod gosci: wysoko postawiony zlodziej cienia, reakcje w zaleznosci od twojego statusu
-
 4. Pas zatrzymania czasu jako nagroda? 
 
 5. Quest Derila jednym z N questów, w którym walczymy z grupami stworzen/organizacji (niczym w twisted runes). Zaimplementuje jesli mi sie zachce, zaczniemy tylko od tego encountera z derilem.
-
-6. Oskryptowac Thavina. Niech summonuje demony w walce, troche zmodyfikowac obecny skrypt maga.
 
 C:MoveToArea("AGAR01")
 C:MoveToArea("AGAR01")
@@ -29,3 +25,5 @@ C:GetGlobal("LarotIsHealing","LOCALS") while p
 - Shout: nie leciec do tego kto krzyczy bo to bez sensu w tym pokoju
 8. Visibility
 - upewnic sie, ze nie da sie schowac przed czescia przeciwnikow za mgla wojny
+9. Angielskie sounds
+- po prostu folder z sountrackami z inna nazwa i kopiowac do override

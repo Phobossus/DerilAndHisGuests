@@ -9,11 +9,16 @@ IF ~~ THEN BEGIN 0
 END
 
 IF ~~ THEN BEGIN 1
-	SAY ~Nie znamy twoich atutów, zaś skoro sam nie jesteś skory ich przedstawić, prawdopodobnie nie są godne uwagi. Wprowadzanie cię w szczegóły byłoby zwykłą stratą czasu.~
+	SAY ~Niewiele o tobie wiemy, nie znamy też twoich atutów, zaś skoro sam nie jesteś skory ich przedstawić, prawdopodobnie nie są godne uwagi. Już raz udało ci się zmarnować nasz czas, głupotą byłoby pozwolić ci uczynić to po raz kolejny.~
 	IF ~~ THEN EXTERN ~Lagole~ 6
 END
 
 IF ~~ THEN BEGIN 2
-	SAY ~To oczywiście tylko słowa, ale być może decyzja o eliminacji tej grupy jest... przedwczesna. Myślę, że wszystkim nam zależy na uniknięciu opóźnień, jeśli istnieje taka możliwość.~
-	IF ~~ THEN EXTERN ~Lagole~ 8
+	SAY ~<CHARNAME> tutaj? To odrobinę... komplikuje sprawę.~
+	IF ~~ THEN EXTERN ~Larottle~ 5
+END
+
+IF ~~ THEN BEGIN 3
+	SAY ~Jest też inna opcja. Wykorzystaj swoje umiejętności Maurezhi i przejmij go. Nikt nie nabierze podejrzeń, a osoba o reputacji <CHARNAME> doskonale sprawdzi się w-~
+	IF ~~ THEN EXTERN ~Lagole~ 13
 END

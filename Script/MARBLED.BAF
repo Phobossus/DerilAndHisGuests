@@ -37,6 +37,7 @@ THEN
 		CreateVisualEffectObject("SPRWRA2i", LastSeenBy(Myself))
 		DisplayStringHead(Myself, @46)
 		ChangeEnemyAlly(LastSeenBy(Myself), ENEMY)
+		DisplayString(LastSeenBy(Myself), @49)
 		SetGlobalTimer("MARBLECHARM", "GLOBAL", THREE_ROUNDS)
 		SetInterrupt(TRUE)
 END

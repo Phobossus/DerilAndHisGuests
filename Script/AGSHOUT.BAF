@@ -18,17 +18,6 @@ END
 IF
 	Heard([ANYONE],99)
 	Allegiance(Myself,NEUTRAL)
-	!Class(Myself,INNOCENT)
-THEN
-	RESPONSE #100
-		Shout(57)
-		Enemy()
-		MoveToObject(LastHeardBy(Myself))
-END
-
-IF
-	Heard([ANYONE],99)
-	Allegiance(Myself,NEUTRAL)
 THEN
 	RESPONSE #100
 		Enemy()
@@ -60,5 +49,13 @@ THEN
 	RESPONSE #100
 		MoveToObject(LastHeardBy(Myself))
 		Continue()
+END
+
+IF
+  	!See(NearestEnemyOf(Myself))
+  	See(NearestAllyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToObject(LastSeenBy(Myself))
 END
 

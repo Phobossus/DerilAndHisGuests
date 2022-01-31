@@ -13,7 +13,8 @@ END
 
 IF ~~ THEN BEGIN 2
 	SAY ~Zobaczcie na własne oczy jak kończą ci, którzy wtykają nos tam, gdzie nie trzeba! Udowodnię swój potencjał!~
-	IF ~InParty("CERND")~ THEN DO ~Enemy()~ EXTERN ~CERNDJ~ DerilNotOver06
+	IF ~IsValidForPartyDialogue("CERND")~ THEN DO ~Enemy()~ EXTERN ~CERNDJ~ ReactDeril01
+	IF ~IsValidForPartyDialogue("KELDORN")~ THEN DO ~Enemy()~ EXTERN ~KELDORJ~ ReactDeril01
 	IF ~~ THEN DO ~Enemy()~ EXIT
 END
 
