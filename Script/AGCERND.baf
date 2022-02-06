@@ -1,10 +1,19 @@
 IF
-	//InParty(Myself)
+	InParty(Myself)
 	Global("DerilQuestDone", "GLOBAL", 1)
 	Global("CerndCommQuestDone", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		SetGlobal("CerndCommQuestDone", "GLOBAL", 1)
+END
+
+IF
+	!InParty(Myself)
+	Global("DerilQuestDone", "GLOBAL", 1)
+	Global("CerndCommQuestDone", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("CerndCommQuestDone", "GLOBAL", 2)
 END
 
 IF
