@@ -133,9 +133,8 @@ COPY ~AGDerilMansionExtended/CRE/MARBLED.CRE~ ~override/~
 /** ITEMS */
 // Szarfa Verissy
 COPY ~AGDerilMansionExtended/Items/VERBELT.ITM~ ~override/~
-    SAY NAME2 @63
-    SAY DESC @64
-    SAY IDENTIFIED_DESC @64
+    SAY NAME2 @80
+    SAY IDENTIFIED_DESC @81
 
 // Entrance to Deril's guest room
 COPY_EXISTING ~AR1004.ARE~ ~OVERRIDE~

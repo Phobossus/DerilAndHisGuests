@@ -54,6 +54,7 @@ IF
 	See(NearestEnemyOf(Myself))
 	PartyHasItem("SW2H10")
 	Global("NoticedKarsomir", "GLOBAL", 0)
+	!Dead(Player1)
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)

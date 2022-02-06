@@ -19,6 +19,17 @@ THEN
 END
 
 IF
+	AreaCheck("AGAR01")
+	Allegiance(Myself, ENEMY)
+	Global("DerilTpsCloser", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("DerilTpsCloser", "LOCALS", 1)
+		ReallyForceSpellPoint([184.448], WIZARD_DIMENSION_DOOR)
+		FaceObject(Player1)
+END
+
+IF
 	StateCheck(Myself,STATE_REALLY_DEAD)
 	Global("DerilDefeated", "GLOBAL", 0)
 THEN
