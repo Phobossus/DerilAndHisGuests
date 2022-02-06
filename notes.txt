@@ -1,12 +1,45 @@
-1. Jesli minie conajmniej 5 dni, to random encounter miedzy lokacjami:
-Deril, Lagole i reszta, walka ze wszystkimi.
+TODO:
 
-2. Drzwi Unlock dopiero, gdy wracamy z cerndem i zmienna odpowiednia ustawiona.
-- w pokoju beda jacys straznicy, po ich pokonaniu drzwi sie otworza
+1. Loot.
+- Itemek z lore zwiazanym z Verissa, ktory umozliwia zawodzenie banshee 1x dziennie?
+- Kamień Łotrzyków, Diament
+- Długi łuk +2
+- Miecz oburęczny +2, 5% szansy na słowo mocy gin?
 
-4. Pas zatrzymania czasu jako nagroda? 
+2. Visibility
+- upewnic sie, ze nie da sie schowac przed czescia przeciwnikow za mgla wojny
+- random walk po prostu until target found gdy not see enemy [done] 
 
-5. Quest Derila jednym z N questów, w którym walczymy z grupami stworzen/organizacji (niczym w twisted runes). Zaimplementuje jesli mi sie zachce, zaczniemy tylko od tego encountera z derilem.
+3. Zasadzka Derila [ DONE]
+b) Jesli zabilismy Thavina w Mansion, to nie tworzymy go w Ambush (jesli do niego dojdzie) [ WORKS]
+3) Jesli weszlismy do AGAR01, to deaktywujemy mozliwosc ambush
+4) Jesli nastapil Ambush, to: (DONE)
+- zamykamy wejscie do Agar01 (zamykamy drzwi) [ WORKS ]
+- usuwamy Thavina, jesli go zespawnowalismy w mansion [ WORKS ]
+
+Testy:
+#1. Normal flow, spawnowanie wszystkich, smierc wszystkich, wyjscie portalem i journal entry.
+Mansion Derila puste, drzwi zamkniete. [WORKS]
+
+#2. Thavin killed in mansion
+Spawnowanie oprocz thavina, smierc wszystkich, wyjscie portalem i journal entry.
+Mansion Derila puste, drzwi zamkniete. [WORKS] 
+
+#3. Mansion flow 
+Thavin killed, guest room entered. Resting should no longer give me ambush. [WORKS] 
+
+4. IF
+	Global("DerilQuestDone","GLOBAL",1)
+	Global("ToggleCerndCommentDerilResolution","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ToggleCerndCommentDerilResolution","GLOBAL",1)
+END
+
+this never happens
+
+SPCHLGT1
+SPFLESHS - summon pillaru
 
 C:MoveToArea("AGAR01")
 C:MoveToArea("AGAR01")
@@ -14,16 +47,16 @@ C:CreateItem("SW2H10")
 
 C:CreateCreature("LAROTTLE")
 C:CreateCreature("MARBLED")
+C:CreateItem("SW2H10")
 
-C:GetGlobal("LarotIsHealing","LOCALS") while p
+C:GetGlobal("PillarMembersSlain","GLOBAL") while p
+C:GetGlobal("LarotDefeated", "GLOBAL")
 
-
-	IF ~ReputationLT(Player1, 16)~ THEN REPLY ~~
-	IF ~ReputationGT(Player1, 15)~ THEN REPLY ~~
-
-7. Fixy dla Larottle i Banshee
-- Shout: nie leciec do tego kto krzyczy bo to bez sensu w tym pokoju
-8. Visibility
-- upewnic sie, ze nie da sie schowac przed czescia przeciwnikow za mgla wojny
-9. Angielskie sounds
+/////////////// Translation ang - optional
+1. Angielskie sounds
 - po prostu folder z sountrackami z inna nazwa i kopiowac do override
+2. Translate dialogow
+3. Translate .tra z Polish/
+
+In the Baldur's Gate games, BALDUR.BCS (and BALDUR25.BCS in ToB) are also present. They have no specific object (and as such, local variables do not work in them), but run all the time.
+Finally, PLAYER1D.BCS runs whenever the party rests, in a similar way to the NPC entries in PDIALOG.2DA. 

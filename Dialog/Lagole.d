@@ -89,11 +89,17 @@ IF ~~ THEN BEGIN 12
 END
 
 IF ~~ THEN BEGIN 13
-	SAY ~To nie wchodzi w grę. Wciąż potrzebujemy tożsamości Marble, przynajmniej do czasu uzyskania reszty pozwoleń.~
+	SAY ~Znudziły mnie te dywagacje. Wygląda na to, że stwarzasz same problemy, niezależnie od tego, czy żyjesz czy nie. Nie mam na to czasu.~ 
 	IF ~~ THEN GOTO 14
 END
 
 IF ~~ THEN BEGIN 14
-	SAY ~Magia iluzji i sobowtórniaki nie oprą się zaklęciom poznania, nie ma więc mowy o alternatywie. Widzę więc wyłącznie jedno rozwiązanie.~ 
-	IF ~~ THEN EXIT
+	SAY ~Odejdź, droga wolna. Uznaj to za szansę, by zapomnieć co tu zobaczyłeś. Jeśli przyjdzie ci do głowy opowiedzieć komuś zbyt wiele, nie otrzymasz kolejnej. Znalezienie cię nie wymaga większego wysiłku.~
+	IF ~~ THEN DO ~
+	SetGlobal("PillarEscapesPeacefully", "GLOBAL", 1)
+	// Unlock sejf?
+	
+	~ EXIT
 END
+
+

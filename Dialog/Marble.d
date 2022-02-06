@@ -40,3 +40,8 @@ IF ~~ THEN BEGIN 6
 	IF ~~ THEN EXTERN ~Verissa~ 3
 END
 
+IF ~~ THEN BEGIN 7
+	SAY ~W istocie, wolałbym uniknąć przedwczesnego porzucania tej formy... w innym przypadku byłoby to optymalne rozwiązanie.~
+	IF ~~ THEN EXTERN ~Verissa~ 4
+END
+

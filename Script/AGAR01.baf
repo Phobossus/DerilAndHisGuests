@@ -1,20 +1,94 @@
-IF 
-	Global("ThavinDefeated", "GLOBAL", 1)
-THEN RESPONSE #100
-	SetGlobal("ThavinDefeated", "GLOBAL", 2)
-	SetGlobal("PrepareGuestRoom", "GLOBAL", 1)
+IF
+	OnCreation()
+	!Global("ExitAGAR01Unsealed", "GLOBAL", 1)
+	Global("EnteredDerilGuestRoom", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredDerilGuestRoom", "GLOBAL", 1)
+		TriggerActivation("TranAG1004", FALSE)
+		
+		CreateCreature("SASTZI", [629.436], 7)
+		CreateCreature("VERISSA", [464.340], 14)
+		CreateCreature("LAGOLE02", [610.281], 0)
+		CreateCreature("DERIL02", [668.303], 6)
+		CreateCreature("LAROTTLE", [557.491], 7)
+		CreateCreature("MARBLED", [400.364], 14)
+		Continue()
+END
+
+// Only visual
+IF
+	Global("SealExitAGAR01", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("SealExitAGAR01", "GLOBAL", 2)
+		PlaySound("EFF_E01")
+		CreateVisualEffect("SPCMWOUI", [223.551])
 END
 
 IF
-	Global("PrepareGuestRoom", "GLOBAL", 1)
-THEN RESPONSE #100
-	SetGlobal("PrepareGuestRoom", "GLOBAL", 2)
-
-	CreateCreature("SASTZI", [629.436], 7)
-	CreateCreature("VERISSA", [464.340], 14)
-	CreateCreature("LAGOLE02", [610.281], 0)
-	CreateCreature("DERIL02", [668.303], 6)
-	CreateCreature("LAROTTLE", [557.491], 7)
-	CreateCreature("MARBLED", [400.364], 14)
-	
+	Global("PillarEscapesPeacefully", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("PillarEscapesPeacefully", "GLOBAL", 2)
+		AddExperienceParty(50000)
+		
+		StartCutSceneMode()
+		ActionOverride("celich", ReallyForceSpell(Myself, DRYAD_TELEPORT))
+		ActionOverride("verissa", ReallyForceSpell(Myself, DRYAD_TELEPORT))
+		ActionOverride("sastzi", ReallyForceSpell(Myself, DRYAD_TELEPORT))
+		ActionOverride("larottle", ReallyForceSpell(Myself, DRYAD_TELEPORT))
+		ActionOverride("marbled", ReallyForceSpell(Myself, DRYAD_TELEPORT))
+		Wait(2)
+		EndCutSceneMode()
+		
+		SetQuestDone(@15)
+		AddJournalEntry(@51,QUEST_DONE)
+		SetGlobalTimer("CerndReactDerilQuestDone01", "GLOBAL", TWO_ROUNDS)
+		SetGlobal("DerilQuestDone", "GLOBAL", 1)
 END
+
+IF
+	Global("PillarMembersSlain", "GLOBAL", 5)
+	Global("DerilMansionUpdateJournal", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("DerilMansionUpdateJournal", "GLOBAL", 1)
+		SetQuestDone(@15)
+		AddJournalEntry(@50,QUEST_DONE)
+		SetGlobalTimer("CerndReactDerilQuestDone02", "GLOBAL", TWO_ROUNDS)
+		SetGlobal("DerilQuestDone", "GLOBAL", 1)
+END
+
+// Opening up exit to the house in no-karsomir-stolen case
+IF
+	Global("ExitAGAR01Unsealed", "GLOBAL", 0)
+	Global("StealKarsomir", "GLOBAL", 0)
+	OR(2)
+		Global("PillarEscapesPeacefully", "GLOBAL", 2)
+		Global("PillarMembersSlain", "GLOBAL", 5)
+THEN
+	RESPONSE #100
+		SetGlobal("ExitAGAR01Unsealed", "GLOBAL", 1)
+		PlaySound("EFF_E01")
+		CreateVisualEffect("SPCMWOUI", [223.551])
+		DisplayString(Player1, @60)
+		TriggerActivation("TranAG1004", "TRUE")
+END
+
+
+// Opening up exit to the house in karsomir-stolen case
+IF
+	Global("ExitAGAR01Unsealed", "GLOBAL", 0)
+	GlobalGT("StealKarsomir", "GLOBAL", 0)
+	Global("PillarMembersSlain", "GLOBAL", 4)
+THEN
+	RESPONSE #100
+		SetGlobal("ExitAGAR01Unsealed", "GLOBAL", 1)
+		PlaySound("EFF_E01")
+		CreateVisualEffect("SPCMWOUI", [223.551])
+		DisplayString(Player1, @60)
+		TriggerActivation("TranAG1004", "TRUE")
+END
+	
+		

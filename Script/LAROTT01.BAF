@@ -1,4 +1,55 @@
 IF
+	OnCreation()
+	Global("DerilAmbush", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Die()
+THEN
+	RESPONSE #100
+		IncrementGlobal("PillarMembersSlain", "GLOBAL", 1)
+END
+
+// Deaths
+// If in Ambush area, do dimensional door escape
+IF
+	Global("LarotDefeated", "GLOBAL", 1)
+	Global("DerilAmbush", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("LarotDefeated", "GLOBAL", 2)
+		ReallyForceSpell(Myself, DRYAD_TELEPORT)
+END
+// If in guest room area, escape via door
+IF
+	Global("LarotDefeated", "GLOBAL", 1)
+	Global("DerilAmbush", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("LarotDefeated", "GLOBAL", 2)
+		EscapeArea()
+END
+
+// Dialog in Deril's main hall after other pillar members have been defeated
+IF
+	!Global("DerilAmbush", "GLOBAL", 1)
+	AreaCheck("AR1004")
+	Global("StealKarsomir", "GLOBAL", 2)
+	See([PC])
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("StealKarsomir", "GLOBAL", 3)
+		StartDialogNoSet(Player1)
+		SetInterrupt(TRUE)
+END
+
+// Notice Karsomir and initiate dialog (only in Deril's guest room fight)
+IF
+	!Global("DerilAmbush", "GLOBAL", 1)
 	Allegiance(Myself,ENEMY)
 	See(NearestEnemyOf(Myself))
 	PartyHasItem("SW2H10")
@@ -13,7 +64,9 @@ THEN
 		SetInterrupt(TRUE)
 END
 
+// Escape Area with Karsomir (only in Deril's guest room fight)
 IF
+	!Global("DerilAmbush", "GLOBAL", 1)
 	Global("StealKarsomir", "GLOBAL", 1)
 THEN
 	RESPONSE #100
@@ -26,11 +79,13 @@ THEN
 		DisplayStringHead(Myself, @43)  // Miecz jest wreszcie m?j... ale walka jest twoja, Lagole. Ha ha ha.
 		Wait(1)
 		EscapeArea()
+		SetGlobalTimer("LarottleAR1004","GLOBAL",THREE_ROUNDS)
 		SetInterrupt(TRUE)
 END
 
+// Standard invis + heal (Deril's guest room/Ambush room)
 IF
-	Global("NoticedKarsomir", "GLOBAL", 0)
+	Global("NoticedKarsomir", "GLOBAL", 0)	
 	HPPercentLT(Myself, 20)
 	GlobalLT("LarotHealsUsed", "LOCALS", 2)
 	Global("LarotIsHealing", "LOCALS", 0)
@@ -49,6 +104,27 @@ THEN
 		SetInterrupt(TRUE)
 END
 
+// Faster self heal (Deril's main hall = no random walk)
+IF
+	AreaCheck("AR1004")
+	HPPercentLT(Myself, 20)
+	GlobalLT("LarotHealsUsed", "LOCALS", 2)
+	Global("LarotIsHealing", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("LarotIsHealing", "LOCALS", 1)
+	
+		IncrementGlobal("LarotHealsUsed", "LOCALS", 1)
+		CreateVisualEffectObject("SPCCOLDE",Myself)
+		ReallyForceSpell(Myself, WIZARD_INVISIBILITY)
+		ForceSpell(Myself, CLERIC_HEAL)
+		
+		SetGlobal("LarotIsHealing", "LOCALS", 0)
+		SetInterrupt(TRUE)
+END
+
+// Escapes arena when defeated, doesn't die (only in Deril's guest room/Ambush room)
 IF
 	Global("NoticedKarsomir", "GLOBAL", 0)
 	HP(Myself, 1)
@@ -60,12 +136,30 @@ THEN
 		SetInterrupt(FALSE)
 		SetGlobal("LarotDefeated", "GLOBAL", 1)
 		StartDialogNoSet([PC])
-		EscapeArea()
+		IncrementGlobal("PillarMembersSlain", "GLOBAL", 1)
 		SetInterrupt(TRUE)
 END
 
+// Larottle in AR1004 defeated = can be killed, we take away invulnerability item
 IF
-	Global("NoticedKarsomir", "GLOBAL", 0)
+	
+	AreaCheck("AR1004")
+	HP(Myself, 1)
+	Global("LarotHealsUsed", "LOCALS", 2)
+	Global("LarotIsHealing", "LOCALS", 0)
+	Global("InvulnerabilityGone", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("InvulnerabilityGone", "LOCALS", 1)
+		ActionOverride("larottle", DestroyItem("MINHP1"))
+		Continue()
+END
+
+// Standard POWER WORD on seeing someone below < 60 (every fight)
+IF
+	OR(2)	
+		Global("NoticedKarsomir", "GLOBAL", 0)
+		AreaCheck("AR1004")
 	Global("LarotDefeated", "GLOBAL", 0)
     Global("LarotIsHealing", "LOCALS", 0)
 	See(NearestEnemyOf(Myself))
@@ -79,9 +173,12 @@ THEN
 		SetGlobalTimer("NextPowerWordKill","GLOBAL",THREE_ROUNDS)
 		ForceSpell(LastSeenBy(Myself), WIZARD_POWER_WORD_KILL)
 END
-	
+
+// Standard attack/dispel (every fight)
 IF
-	Global("NoticedKarsomir", "GLOBAL", 0)
+	OR(2)	
+		Global("NoticedKarsomir", "GLOBAL", 0)
+		AreaCheck("AR1004")
 	Global("LarotDefeated", "GLOBAL", 0)
     Global("LarotIsHealing", "LOCALS", 0)
 	See(NearestEnemyOf(Myself))

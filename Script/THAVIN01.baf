@@ -1,5 +1,27 @@
+// Remove from Deril's mansion if Ambush happened before
+
+IF
+	Global("DerilAmbush", "GLOBAL", 1)
+	AreaCheck("AR1004")
+	Global("ThavinDespawned", "GLOBAL", 0)	
+THEN
+	RESPONSE #100
+		SetGlobal("ThavinDespawned", "GLOBAL", 1)
+		DestroySelf()
+END
+
+IF
+	OnCreation()
+	Global("DerilAmbush", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+	
+
 // Initial dialog
 IF
+	!Global("DerilAmbush", "GLOBAL", 1)
 	Global("ThavinInit","GLOBAL",0)
 	See([PC])
 THEN
@@ -10,14 +32,26 @@ END
 
 // Door unlocks after death
 IF
+	!Global("DerilAmbush", "GLOBAL", 1)
 	StateCheck(Myself,STATE_REALLY_DEAD)
-	Global("ThavinDefeated", "GLOBAL", 0)
+	Global("ThavinInMansionDefeated", "GLOBAL", 0)
 THEN
 	RESPONSE #100
-		SetGlobal("ThavinDefeated","GLOBAL",1)
+		SetGlobal("ThavinInMansionDefeated","GLOBAL",1)
 		//CreateVisualEffectObject("SPATTCK1", "Door Object 2")
 		CreateVisualEffect("SPATTCK1",[241.602])
 		PlaySound("EFF_E01")
 		Unlock("Door Object 2")
 END
+
+// Count into "PillarMembersSlain" if its the ambush fight
+IF
+	Die()
+	Global("DerilAmbush", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("PillarMembersSlain", "GLOBAL", 1)
+END
+
+
 

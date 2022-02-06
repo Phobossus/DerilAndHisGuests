@@ -1,8 +1,54 @@
+// When Ambush happens, guest room no longer accessible
 IF
-Global("DerilQuestAccepted","GLOBAL",2)
-
-THEN RESPONSE #100
-	CreateCreature("THAVIN", [457.556], 12)
-
-SetGlobal("DerilQuestAccepted", "GLOBAL", 3) // AR1004 room prepared, creatures spawned
+	Global("DerilAmbush", "GLOBAL", 1)
+	Global("LockDoorAfterAmbush", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("LockDoorAfterAmbush", "GLOBAL", 1)
+		
+		CloseDoor("Door Object 2")
+		Lock("Door Object 2") 
 END
+
+IF
+	GlobalGT("DerilFled", "GLOBAL", 0)
+	Global("AmbushTimerSetup", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("AmbushTimerSetup", "GLOBAL", 1)
+		SetGlobalTimer("DerilAmbushOnRest", "GLOBAL", FOUR_DAYS)
+END	
+
+IF
+	GlobalTimerExpired("SpawnThavin", "GLOBAL")
+	Global("ThavinIsSpawned", "GLOBAL", 0)
+THEN 
+	RESPONSE #100
+		SetGlobal("ThavinIsSpawned", "GLOBAL", 1)
+		CreateCreature("THAVIN", [457.556], 12)
+END
+
+IF
+	GlobalTimerExpired("LarottleAR1004","GLOBAL")
+	Global("LarottleAr1004Spawned", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("LarottleAr1004Spawned", "GLOBAL", 1)
+		CreateCreature("Larottle", [503.548], 4)
+		ActionOverride("larottle", Enemy())
+		ActionOverride("larottle", CreateItem("SW2H10", 0, 0, 0))
+		ActionOverride("larottle",SetItemFlags("SW2H10",IDENTIFIED,TRUE))
+END
+
+IF
+	Global("PillarMembersSlain", "GLOBAL", 5)
+	Global("DerilMansionUpdateJournal", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("DerilMansionUpdateJournal", "GLOBAL", 1)
+		SetQuestDone(@15)
+		AddJournalEntry(@50,QUEST_DONE)
+		SetGlobalTimer("CerndReactDerilQuestDone02", "GLOBAL", ONE_ROUND)
+		SetGlobal("DerilQuestDone", "GLOBAL", 1)
+END
+		

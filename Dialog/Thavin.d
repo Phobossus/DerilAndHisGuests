@@ -22,7 +22,7 @@ IF ~~ THEN DO ~
 END
 
 IF ~~ THEN BEGIN 2
-SAY ~Obawiam się, że to wy posłużycie nam za rozgrzewkę. Chodźcie, moi przyjaciele, pokażmy Derilowi jak skutecznie rozprawiać się z intruzami.~ 
+SAY ~Obawiam się, że to wy posłużycie nam za rozgrzewkę. Chodźcie, moje najmilsze, pokażemy Derilowi jak skutecznie rozprawiać się z intruzami.~ 
 IF ~~ THEN DO ~
 	CreateCreature("DEMSUC01", [553.462], 0)
 	CreateVisualEffect("SPCLOUD3", [553.462])

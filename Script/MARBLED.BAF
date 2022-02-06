@@ -1,8 +1,16 @@
 IF
+	Die()
+THEN
+	RESPONSE #100
+		IncrementGlobal("PillarMembersSlain", "GLOBAL", 1)
+END
+
+IF
 	Allegiance(Myself,NEUTRAL)	
-	OR(2)
+	OR(3)
 	   AttackedBy([GOODCUTOFF],DEFAULT)
 	   Heard([ANYONE],99)
+	   Global("DerilAmbush", "GLOBAL", 1)
 THEN
 	RESPONSE #100
 		Enemy()

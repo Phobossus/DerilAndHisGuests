@@ -1,4 +1,19 @@
 IF
+	OnCreation()
+	Global("DerilAmbush", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Die()
+THEN
+	RESPONSE #100
+		IncrementGlobal("PillarMembersSlain", "GLOBAL", 1)
+END
+
+IF
 	AttackedBy([GOODCUTOFF],DEFAULT)
 	Allegiance(Myself,NEUTRAL)
 THEN

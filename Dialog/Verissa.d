@@ -20,5 +20,10 @@ END
 
 IF ~~ THEN BEGIN 3
 	SAY ~Jest też inna opcja. Wykorzystaj swoje umiejętności Maurezhi i przejmij go. Nikt nie nabierze podejrzeń, a osoba o reputacji <CHARNAME> doskonale sprawdzi się w-~
+	IF ~~ THEN EXTERN ~Larottle~ 6
+END
+
+IF ~~ THEN BEGIN 4
+	SAY ~Nie widzę zadowalającego wyjścia z tej sytuacji.~
 	IF ~~ THEN EXTERN ~Lagole~ 13
 END
