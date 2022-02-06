@@ -1,0 +1,78 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		TriggerActivation("DerilExit01", FALSE)
+		SetGlobal("DerilAmbush", "GLOBAL", 1)	
+		Continue()
+END
+
+// Sas'Tzi arrives
+IF
+	Global("PillarMembersArrive", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("PillarMembersArrive", "GLOBAL", 2)
+		CreateCreatureDoor("SASTZI", [904.388], SW)
+		
+		SetGlobalTimer("Thavin", "GLOBAL", ONE_ROUND)
+		SetGlobalTimer("MarbleLarottle", "GLOBAL", TWO_ROUNDS)
+		SetGlobalTimer("VerissaLagole", "GLOBAL", NINE_ROUNDS)
+END
+
+// Thavin arrives
+
+IF
+	GlobalTimerExpired("Thavin", "GLOBAL")
+	Global("ThavinInMansionDefeated", "GLOBAL", 0)
+	Global("AmbushSpawnThavin", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("AmbushSpawnThavin", "GLOBAL", 1)
+		CreateCreatureDoor("THAVIN", [365.272], SE)
+		CreateCreatureDoor("DEMSUC01", [331.305], SE)
+END
+
+IF
+	Global("ThavinInMansionDefeated", "GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ThavinInMansionDefeated", "GLOBAL", 2)
+		IncrementGlobal("PillarMembersSlain", "GLOBAL", 1)
+END
+
+// Marble & Larottle arrive
+IF
+	GlobalTimerExpired("MarbleLarottle", "GLOBAL")
+	Global("SpawnMarbleLarottle", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("SpawnMarbleLarottle", "GLOBAL", 1)
+		CreateCreatureDoor("MARBLED", [360.422], E)
+		Wait(6)	
+		CreateCreatureDoor("LAROTTLE", [863.223], W)
+END
+
+// Verissa, Lagole arrive (should be right after Thavin's time stop ends)
+IF
+	GlobalTimerExpired("VerissaLagole", "GLOBAL")
+	Global("SpawnVerissaLagole", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("SpawnVerissaLagole", "GLOBAL", 1)
+		CreateCreatureDoor("VERISSA", [618.286], S)
+		Wait(12)
+		CreateCreatureDoor("LAGOLE02", [630.462], N)
+END		
+		
+IF
+	Global("PillarMembersSlain", "GLOBAL", 7)
+	Global("AmbushExitIsOpen", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("AmbushExitIsOpen", "GLOBAL", 1)
+		PlaySound("EFF_E01")
+		CreateVisualEffect("SPCMWOUI", [919.158])
+		DisplayString(Player1, @60)
+		TriggerActivation("DerilExit01", TRUE)
+END

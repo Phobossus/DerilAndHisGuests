@@ -1,0 +1,32 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AmbushExitIsOpen", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@62)
+		StartCutSceneMode()
+		CreateVisualEffectObject("SPPORTAL",Player1)
+		Wait(4)
+		SetGlobalTimer("CerndReactDerilQuestDone03", "GLOBAL", ONE_ROUND)
+		SetQuestDone(@15)
+		AddJournalEntry(@52,QUEST_DONE)
+		SetGlobal("DerilQuestDone", "GLOBAL", 1)
+		FadeToColor([20.0],0)
+		Wait(1)
+		PlaySound("PORTAL2")
+		Wait(2)
+		RestorePartyLocations()
+		MultiPlayerSync()
+		EndCutSceneMode()
+		FadeFromColor([20.0],0)	
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+

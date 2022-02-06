@@ -1,0 +1,25 @@
+IF
+	GlobalTimerExpired("DerilAmbushOnRest","GLOBAL")
+	!Global("EnteredDerilGuestRoom", "GLOBAL", 1)
+	!Global("DerilAmbush", "GLOBAL", 1)
+THEN
+	RESPONSE #100
+		StorePartyLocations()
+		StartCutSceneMode()
+		FadeToColor([50.0],0)
+		Wait(4)
+		ActionOverride(Player1,Rest())
+		ActionOverride(Player2,Rest())
+		ActionOverride(Player3,Rest())
+		ActionOverride(Player4,Rest())
+		ActionOverride(Player5,Rest())
+		ActionOverride(Player6,Rest())
+		RestParty()
+		ActionOverride(Player1,LeaveAreaLUA("AGAR02","",[614.374],S))
+		ActionOverride(Player2,LeaveAreaLUA("AGAR02","",[578.466],S))
+		ActionOverride(Player3,LeaveAreaLUA("AGAR02","",[679.460],S))
+		ActionOverride(Player4,LeaveAreaLUA("AGAR02","",[726.342],S))
+		ActionOverride(Player5,LeaveAreaLUA("AGAR02","",[616.314],S))
+		ActionOverride(Player6,LeaveAreaLUA("AGAR02","",[507.378],S))
+		StartCutScene("pilamb")
+END
