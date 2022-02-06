@@ -30,10 +30,10 @@ Thavin killed, guest room entered. Resting should no longer give me ambush. [WOR
 
 4. IF
 	Global("DerilQuestDone","GLOBAL",1)
-	Global("ToggleCerndCommentDerilResolution","GLOBAL",0)
+	Global("CerndCommQuestDone","GLOBAL",0)
 THEN
 	RESPONSE #100
-		SetGlobal("ToggleCerndCommentDerilResolution","GLOBAL",1)
+		SetGlobal("CerndCommQuestDone","GLOBAL",1)
 END
 
 this never happens

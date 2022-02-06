@@ -1,15 +1,15 @@
 IF
 	//InParty(Myself)
 	Global("DerilQuestDone", "GLOBAL", 1)
-	Global("ToggleCerndCommentDerilResolution", "GLOBAL", 0)
+	Global("CerndCommQuestDone", "GLOBAL", 0)
 THEN
 	RESPONSE #100
-		SetGlobal("ToggleCerndCommentDerilResolution", "GLOBAL", 1)
+		SetGlobal("CerndCommQuestDone", "GLOBAL", 1)
 END
 
 IF
 	GlobalTimerExpired("CerndReactDerilQuestDone01","GLOBAL")
-	Global("ToggleCerndCommentDerilResolution", "GLOBAL", 1)
+	Global("CerndCommQuestDone", "GLOBAL", 1)
 	Global("CerndReactDerilQuestDone", "GLOBAL", 0)
 THEN
 	RESPONSE #100
@@ -19,7 +19,7 @@ END
 
 IF
 	GlobalTimerExpired("CerndReactDerilQuestDone02","GLOBAL")
-	Global("ToggleCerndCommentDerilResolution", "GLOBAL", 1)
+	Global("CerndCommQuestDone", "GLOBAL", 1)
 	Global("CerndReactDerilQuestDone", "GLOBAL", 0)
 THEN
 	RESPONSE #100
@@ -29,7 +29,7 @@ END
 
 IF
 	GlobalTimerExpired("CerndReactDerilQuestDone03","GLOBAL")		
-	Global("ToggleCerndCommentDerilResolution", "GLOBAL", 1)
+	Global("CerndCommQuestDone", "GLOBAL", 1)
 	Global("CerndReactDerilQuestDone", "GLOBAL", 0)
 THEN
 	RESPONSE #100
