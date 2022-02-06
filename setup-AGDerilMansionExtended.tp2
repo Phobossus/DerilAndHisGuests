@@ -15,6 +15,7 @@ LANGUAGE
 BEGIN @1
 
 ADD_JOURNAL @15 USING ~AGDerilMansionExtended\Polish\AGDerilQuests.tra~
+// TODO: Check whether I need to do that with @16 (case when we straight up reject Cernd, but still should get quest info)
 
 
 //** Sounds 
@@ -129,6 +130,12 @@ COPY ~AGDerilMansionExtended/CRE/MARBLED.CRE~ ~override/~
 	WRITE_ASCII SCRIPT_GENERAL ~AGSEARCH~
 	WRITE_ASCII DIALOG ~MARBLE~
 
+/** ITEMS */
+// Szarfa Verissy
+COPY ~AGDerilMansionExtended/Items/VERBELT.ITM~ ~override/~
+    SAY NAME2 @63
+    SAY DESC @64
+    SAY IDENTIFIED_DESC @64
 
 // Entrance to Deril's guest room
 COPY_EXISTING ~AR1004.ARE~ ~OVERRIDE~
