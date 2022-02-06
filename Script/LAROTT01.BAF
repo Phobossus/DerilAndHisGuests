@@ -7,6 +7,15 @@ THEN
 END
 
 IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Shout(99)
+		Enemy()
+END
+
+IF
 	Die()
 THEN
 	RESPONSE #100

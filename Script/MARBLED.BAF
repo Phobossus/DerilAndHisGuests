@@ -13,6 +13,7 @@ IF
 	   Global("DerilAmbush", "GLOBAL", 1)
 THEN
 	RESPONSE #100
+	    Shout(99)
 		Enemy()
 END
 
