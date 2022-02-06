@@ -27,6 +27,7 @@ THEN
 		SetGlobal("DerilTpsCloser", "LOCALS", 1)
 		ReallyForceSpellPoint([184.448], WIZARD_DIMENSION_DOOR)
 		FaceObject(Player1)
+		Continue()
 END
 
 IF

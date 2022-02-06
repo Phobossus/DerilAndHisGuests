@@ -5,7 +5,7 @@ IF ~~ THEN BEGIN 0
 	IF ~~ THEN EXTERN ~Deril~ 1
 END
 
-IF ~Global("DerilDefeated", "GLOBAL", 1) !Allegiance(Myself, ENEMY)~ THEN BEGIN 1
+IF ~Global("DerilDefeated", "GLOBAL", 3) !Allegiance(Myself, ENEMY)~ THEN BEGIN 1
 	SAY ~Okazał się słaby i daleki od gotowości. W innych okolicznościach pewnie bym wam podziękował.~
 	IF ~~ THEN REPLY ~Wygląda na to, że Deril gustował w dość... specyficznym towarzystwie. Do czego mógłby wam się przydać ktoś taki jak on?~ GOTO 2
 	IF ~~ THEN REPLY ~(Nic nie mów)~ GOTO 5

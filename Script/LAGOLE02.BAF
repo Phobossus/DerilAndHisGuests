@@ -39,6 +39,5 @@ IF
 THEN
     RESPONSE #100
         SetGlobal("DerilDefeated","GLOBAL",3)
-        FaceObject([PC])
         StartDialogNoSet([PC])
 END
