@@ -50,12 +50,3 @@ THEN
 		MoveToObject(LastHeardBy(Myself))
 		Continue()
 END
-
-IF
-  	!See(NearestEnemyOf(Myself))
-  	See(NearestAllyOf(Myself))
-THEN
-	RESPONSE #100
-		MoveToObject(LastSeenBy(Myself))
-END
-
