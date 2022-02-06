@@ -26,17 +26,7 @@ Spawnowanie oprocz thavina, smierc wszystkich, wyjscie portalem i journal entry.
 Mansion Derila puste, drzwi zamkniete. [WORKS] 
 
 #3. Mansion flow 
-Thavin killed, guest room entered. Resting should no longer give me ambush. [WORKS] 
-
-4. IF
-	Global("DerilQuestDone","GLOBAL",1)
-	Global("CerndCommQuestDone","GLOBAL",0)
-THEN
-	RESPONSE #100
-		SetGlobal("CerndCommQuestDone","GLOBAL",1)
-END
-
-this never happens
+Thavin killed, guest room entered. Resting should no longer give me ambush. [WORKS]
 
 SPCHLGT1
 SPFLESHS - summon pillaru

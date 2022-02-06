@@ -10,6 +10,7 @@ THEN
 		Wait(4)
 		SetGlobalTimer("CerndReactDerilQuestDone03", "GLOBAL", ONE_ROUND)
 		SetQuestDone(@15)
+		SetQuestDone(@16)
 		AddJournalEntry(@52,QUEST_DONE)
 		SetGlobal("DerilQuestDone", "GLOBAL", 1)
 		FadeToColor([20.0],0)

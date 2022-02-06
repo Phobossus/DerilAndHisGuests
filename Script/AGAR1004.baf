@@ -47,6 +47,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("DerilMansionUpdateJournal", "GLOBAL", 1)
 		SetQuestDone(@15)
+		SetQuestDone(@16)
 		AddJournalEntry(@50,QUEST_DONE)
 		SetGlobalTimer("CerndReactDerilQuestDone02", "GLOBAL", ONE_ROUND)
 		SetGlobal("DerilQuestDone", "GLOBAL", 1)
