@@ -1,5 +1,5 @@
 # Deril's Mansion extended - behind the locked door
-
+![Select this option](Pictures/3.PNG)
 ---
 
 * Ever wondered who Deril's guests are and what exactly lies behind the locked door in his mansion?
@@ -9,6 +9,7 @@ This mod expands Cernd's quest finale in case you go down the "peaceful" path du
 with Deril, effectively leading up to Lagole Gon showing up and the two of them escaping after
 handing over Cernd's child.
 ![Select this option](Pictures/1.PNG)
+![Select this option](Pictures/2.PNG)
 
 Following the resolution, Cernd voices his concerns over letting Deril go and you
 are then presented with two choices of how you want to address his potential return.
