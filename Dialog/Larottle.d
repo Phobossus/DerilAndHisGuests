@@ -36,7 +36,7 @@ IF ~~ THEN BEGIN 6
 END
 
 IF ~Global("StealKarsomir", "GLOBAL", 3)~ THEN BEGIN 7
-	SAY ~Nie dość, że dostarczyłeś mi obiekt moich niekończących się poszukiwań, to jeszcze pozbyłeś się tej żałosnej zbieraniny. Winny ci jestem najszczersze podziękowania.~
+	SAY ~Nie dość, że dostarczyłeś mi obiekt moich niekończących się poszukiwań, to jeszcze pozbyłeś się tej żałosnej zbieraniny. Winien ci jestem najszczersze podziękowania.~
 	IF ~~ THEN REPLY ~Jesteś częścią tej zbieraniny i zaraz do niej dołączysz.~ GOTO 8
 	IF ~~ THEN REPLY ~Oddaj miecz, i tak nie będziesz miał z niego żadnego użytku.~ GOTO 9
 END

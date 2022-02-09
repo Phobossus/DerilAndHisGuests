@@ -48,6 +48,3 @@ APPEND CERNDP
 	END
 	
 END
-
-// TODO: Nowa zmienna, AGCerndp01 nie powinien byc wypowiadany, gdy deril quest denied, also check DerilAmbush != 1, w innym przypadku mamy za soba ambush
-// wiec dialog ze juz go zalatwilismy i cernd sie cieszy 
