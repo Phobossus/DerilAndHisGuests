@@ -33,10 +33,10 @@ THEN
 		DisplayString(Myself, @41)
 		ReallyForceSpell(Myself, WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
 		ReallyForceSpell(Myself, WIZARD_STONE_SKIN)
-		ReallyForceSpell(Myself, WIZARD_SPELL_IMMUNITY_ABJURATION)
+		ReallyForceSpell(Myself, WIZARD_SPELL_TRAP)
 		
 		ForceSpell(LastSeenBy(Myself),BANSHEE_WAIL)  // SPIN681.SPL (Zawodzenie banshee)
-		
+		SetGlobalTimer("VerissAttack", "GLOBAL", 6)		
 END
 
 // If in party Jaheira, focuses Jaheira
@@ -53,24 +53,62 @@ THEN
 		ReallyForceSpell(LastSeenBy(Myself), WIZARD_FINGER_OF_DEATH)
 END
 
+// At half hp, recast defensives
+IF
+	See(NearestEnemyOf(Myself))
+	HPPercentLT(Myself, 50)
+	Global("halfHpDef", "LOCALS", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("halfHpDef", "LOCALS", 1)
+		ReallyForceSpell(Myself, WIZARD_IMPROVED_MANTLE)
+		ReallyForceSpell(Myself, WIZARD_STONE_SKIN)
+		ReallyForceSpell(Myself, WIZARD_GLOBE_OF_INVULNERABILITY)
+		Continue()
+END
+
+// At half hp do Howl of Pain and heal yourself with vampiric touch
+IF
+	See(NearestEnemyOf(Myself))
+	HPPercentLT(Myself, 50)
+	OR(2)
+		Global("halfHpDef", "LOCALS", 1)
+		GlobalTimerExpired("VERISSA_HOWL", "GLOBAL")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("halfHpDef", "LOCALS", 2)
+
+		DisplayStringHead(Myself, @64)
+		ReallyForceSpellRES("AGHOWLVE", LastSeenBy(Myself))
+		
+		Wait(1)
+		ReallyForceSpell(LastSeenBy(Myself), WIZARD_VAMPIRIC_TOUCH)
+		ReallyForceSpell(SecondNearestEnemyOf(Myself), WIZARD_VAMPIRIC_TOUCH)
+		ReallyForceSpell(ThirdNearestEnemyOf(Myself), WIZARD_VAMPIRIC_TOUCH)
+		SetGlobalTimer("VERISSA_HOWL", "GLOBAL", 45)
+		SetInterrupt(TRUE)
+END
+
 IF
 	See(NearestEnemyOf(Myself))
 	See([PC])
+	GlobalTimerExpired("VerissAttack", "GLOBAL")
 THEN
 	RESPONSE #25
-		Wait(6)
 		ForceSpell(LastSeenBy(Myself), WIZARD_VAMPIRIC_TOUCH)
+		SetGlobalTimer("VerissAttack", "GLOBAL", 6)
 	RESPONSE #15
-		Wait(6)
 		ForceSpell(LastSeenBy(Myself), WIZARD_FINGER_OF_DEATH)
+		SetGlobalTimer("VerissAttack", "GLOBAL", 6)
 	RESPONSE #25
-		Wait(6)
 		ForceSpell(LastSeenBy(Myself), WIZARD_ANIMATE_DEAD)
+		SetGlobalTimer("VerissAttack", "GLOBAL", 6)
 	RESPONSE #35
-		Wait(6)
 		ForceSpell(LastSeenBy(Myself), WIZARD_DIMENSION_DOOR)
 		PlaySound("EFF_M38")
 		Wait(2)	
 		ForceSpell(LastSeenBy(Myself), BANSHEE_WAIL)
+		SetGlobalTimer("VerissAttack", "GLOBAL", 6)
 END
 

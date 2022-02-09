@@ -48,11 +48,11 @@ Should lead to additional dialog in Druid's Grove meeting with cernd.
 
 a) Cernd in Party during the encounter
 b) Cernd not in party during the encounter
-Should lead to additional dialog in Druid's Grove meeting with cernd.
+Should lead to additional dialog in Druid's Grove meeting with cernd. [works]
 
 # Other things to confirm
 - Larottle - does escape script work properly in all areas, even while he's being focused by everyone? (make sure no delay)
-- Can Verissa's belt be used by all classes? (test on minsc/jaheira)
+- Can Verissa's belt be used by all classes? (test on minsc/jaheira)[works]
 
 # Naming convention
 - rename file names when there's a risk of conflict with other mods, maybe some global variable names too

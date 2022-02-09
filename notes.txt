@@ -1,36 +1,3 @@
-TODO:
-
-1. Loot.
-- Itemek z lore zwiazanym z Verissa, ktory umozliwia zawodzenie banshee 1x dziennie?
-- Kamień Łotrzyków, Diament
-- Długi łuk +2
-- Miecz oburęczny +2, 5% szansy na słowo mocy gin?
-
-2. Visibility
-- upewnic sie, ze nie da sie schowac przed czescia przeciwnikow za mgla wojny
-- random walk po prostu until target found gdy not see enemy [done] 
-
-3. Zasadzka Derila [ DONE]
-b) Jesli zabilismy Thavina w Mansion, to nie tworzymy go w Ambush (jesli do niego dojdzie) [ WORKS]
-3) Jesli weszlismy do AGAR01, to deaktywujemy mozliwosc ambush
-4) Jesli nastapil Ambush, to: (DONE)
-- zamykamy wejscie do Agar01 (zamykamy drzwi) [ WORKS ]
-- usuwamy Thavina, jesli go zespawnowalismy w mansion [ WORKS ]
-
-Testy:
-#1. Normal flow, spawnowanie wszystkich, smierc wszystkich, wyjscie portalem i journal entry.
-Mansion Derila puste, drzwi zamkniete. [WORKS]
-
-#2. Thavin killed in mansion
-Spawnowanie oprocz thavina, smierc wszystkich, wyjscie portalem i journal entry.
-Mansion Derila puste, drzwi zamkniete. [WORKS] 
-
-#3. Mansion flow 
-Thavin killed, guest room entered. Resting should no longer give me ambush. [WORKS]
-
-SPCHLGT1
-SPFLESHS - summon pillaru
-
 C:MoveToArea("AGAR01")
 C:MoveToArea("AGAR01")
 C:CreateItem("SW2H10")

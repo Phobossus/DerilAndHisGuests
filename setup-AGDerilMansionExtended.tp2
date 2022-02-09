@@ -16,8 +16,11 @@ BEGIN @1
 
 ADD_JOURNAL @15 USING ~AGDerilMansionExtended\Polish\AGDerilQuests.tra~
 ADD_JOURNAL @16 USING ~AGDerilMansionExtended\Polish\AGDerilQuests.tra~
-// TODO: Check whether I need to do that with @16 (case when we straight up reject Cernd, but still should get quest info)
 
+//** Spells
+// Verissa's Howl
+COPY ~AGDerilMansionExtended/SPL/AGHOWLVE.SPL~ ~override/~
+    SAY NAME1 @63
 
 //** Sounds 
 // Larotte
