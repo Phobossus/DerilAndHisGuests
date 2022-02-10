@@ -86,7 +86,7 @@ THEN
 		ReallyForceSpell(LastSeenBy(Myself), WIZARD_VAMPIRIC_TOUCH)
 		ReallyForceSpell(SecondNearestEnemyOf(Myself), WIZARD_VAMPIRIC_TOUCH)
 		ReallyForceSpell(ThirdNearestEnemyOf(Myself), WIZARD_VAMPIRIC_TOUCH)
-		SetGlobalTimer("VERISSA_HOWL", "GLOBAL", 45)
+		SetGlobalTimer("VERISSA_HOWL", "GLOBAL", 35)
 		SetInterrupt(TRUE)
 END
 

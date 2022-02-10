@@ -6,27 +6,51 @@ VERSION ~v1.0~
 
 LANGUAGE
 	~Polish~
-	~Polish~
-~AGDerilMansionExtended/Polish/AGsetup.tra~
-~AGDerilMansionExtended/Polish/AGitems.tra~
-~AGDerilMansionExtended/Polish/AGDerilQuests.tra~
-~AGDerilMansionExtended/Polish/AGnames.tra~
+	~polish~
+		~AGDerilMansionExtended/Languages/Polish/AGsetup.tra~
+		~AGDerilMansionExtended/Languages/Polish/AGitems.tra~
+		~AGDerilMansionExtended/Languages/Polish/AGDerilQuests.tra~
+		~AGDerilMansionExtended/Languages/Polish/AGnames.tra~
+LANGUAGE
+	~English~
+	~english~
+		~AGDerilMansionExtended/Languages/English/AGsetup.tra~
+		~AGDerilMansionExtended/Languages/English/AGitems.tra~
+		~AGDerilMansionExtended/Languages/English/AGDerilQuests.tra~
+		~AGDerilMansionExtended/Languages/English/AGnames.tra~
 
 BEGIN @1
 
-ADD_JOURNAL @15 USING ~AGDerilMansionExtended\Polish\AGDerilQuests.tra~
-ADD_JOURNAL @16 USING ~AGDerilMansionExtended\Polish\AGDerilQuests.tra~
+ADD_JOURNAL @15 USING ~AGDerilMansionExtended\Languages\%LANGUAGE%\AGDerilQuests.tra~
+ADD_JOURNAL @16 USING ~AGDerilMansionExtended\Languages\%LANGUAGE%\AGDerilQuests.tra~
+
+//** Dialogs
+COMPILE
+	~AGDerilMansionExtended/Languages/%LANGUAGE%/Dialog/AGCerndPEXT.d~
+	~AGDerilMansionExtended/Languages/%LANGUAGE%/Dialog/AGDeril01EXT.d~
+	~AGDerilMansionExtended/Languages/%LANGUAGE%/Dialog/AGCERNDJ.d~
+	~AGDerilMansionExtended/Languages/%LANGUAGE%/Dialog/AGKELDJ.d~
+                            
+// New                      
+	~AGDerilMansionExtended/Languages/%LANGUAGE%/Dialog/Thavin.d~
+	~AGDerilMansionExtended/Languages/%LANGUAGE%/Dialog/Deril.d~
+	~AGDerilMansionExtended/Languages/%LANGUAGE%/Dialog/Lagole.d~
+	~AGDerilMansionExtended/Languages/%LANGUAGE%/Dialog/Larottle.d~
+	~AGDerilMansionExtended/Languages/%LANGUAGE%/Dialog/Marble.d~
+	~AGDerilMansionExtended/Languages/%LANGUAGE%/Dialog/Verissa.d~
+
+//** Sounds 
+// Larottle
+
+COPY ~AGDerilMansionExtended/Languages/%LANGUAGE%/LarotP03.WAV~ ~override/~
+COPY ~AGDerilMansionExtended/Languages/%LANGUAGE%/LarotP04.WAV~ ~override/~
+COPY ~AGDerilMansionExtended/Languages/%LANGUAGE%/LarotP06.WAV~ ~override/~
+
 
 //** Spells
 // Verissa's Howl
 COPY ~AGDerilMansionExtended/SPL/AGHOWLVE.SPL~ ~override/~
     SAY NAME1 @63
-
-//** Sounds 
-// Larotte
-COPY ~AGDerilMansionExtended/Polish/LarotP03.WAV~ ~override/~
-COPY ~AGDerilMansionExtended/Polish/LarotP04.WAV~ ~override/~
-COPY ~AGDerilMansionExtended/Polish/LarotP06.WAV~ ~override/~
 
 //** Scripts
 
@@ -52,28 +76,11 @@ COMPILE ~AGDerilMansionExtended/Script/AGCERND.baf~
 COMPILE ~AGDerilMansionExtended/Script/pilamb.baf~
 
 
+
 // Generic scripts
 COMPILE ~AGDerilMansionExtended/Script/AGPlayer.baf~
 COMPILE ~AGDerilMansionExtended/Script/AGSHOUT.baf~
 COMPILE ~AGDerilMansionExtended/Script/AGSEARCH.baf~
-
-
-COMPILE 
-//** Dialogs
-
-// Existing
- ~AGDerilMansionExtended/Dialog/AGCerndPEXT.d~
- ~AGDerilMansionExtended/Dialog/AGDeril01EXT.d~
- ~AGDerilMansionExtended/Dialog/AGCERNDJ.d~
- ~AGDerilMansionExtended/Dialog/AGKELDJ.d~
- 
-// New
- ~AGDerilMansionExtended/Dialog/Thavin.d~
- ~AGDerilMansionExtended/Dialog/Deril.d~
- ~AGDerilMansionExtended/Dialog/Lagole.d~
- ~AGDerilMansionExtended/Dialog/Larottle.d~
- ~AGDerilMansionExtended/Dialog/Marble.d~
- ~AGDerilMansionExtended/Dialog/Verissa.d~
  
 //** Creatures
 // Thavin

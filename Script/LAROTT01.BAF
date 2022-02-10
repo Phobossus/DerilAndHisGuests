@@ -52,7 +52,7 @@ THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
 		SetGlobal("StealKarsomir", "GLOBAL", 3)
-		StartDialogNoSet(Player1)
+		StartDialogNoSet([PC])
 		SetInterrupt(TRUE)
 END
 
