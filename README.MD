@@ -43,7 +43,7 @@ taken from a saved game of a friend of mine who was doing his first BG2 playthro
 had at the moment of starting Cernd's questline.
 
 The fights are meant to be challenging for parties in that level range - you are unlikely to win on 
-your first try. It is necessary to experience the capabilities of each and every opponent,
+your first try (unless you're in the middle/late game with plenty of good items). It is necessary to experience the capabilities of each and every opponent,
 so that you can prepare properly and think of a tactic. It took me several attempts before 
 beating my own creations :)
 </font>
