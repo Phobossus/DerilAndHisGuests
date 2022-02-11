@@ -5,20 +5,28 @@
 * Ever wondered who Deril's guests are and what exactly lies behind the locked door in his mansion?
 * Ever felt disappointed that his threats of "dealing with you later" never come to fruition?
 
-This mod expands Cernd's quest finale in case you go down the non-violent path during your encounter 
-with Deril.
+<font size=3>
+This mod expands Cernd's quest finale and adds some new content in case you go down the non-violent path during your encounter 
+with Deril.</font>
+
 ![Select this option](Pictures/1.PNG)
+<font size=3>
 (Deril doesn't attack you -> Lagole Gon shows up to rush him -> 
 Deril hands over the child -> the two of them escape through a dimension door)
+</font>
 ---
 # Installation
+<font size=3>
 
-1. Unpack the rar file in your game directory
-   (i.e D:\GOG Games\Baldurs Gate 2)
-2. Run Setup-DerilAndHisGuests.exe
-3. Follow the installation steps:
-- choose language [english, polish]
-- confirm installation
+    1. Unpack the rar file in your game directory
+    (i.e D:\GOG Games\Baldurs Gate 2)
+
+    2. Run Setup-DerilAndHisGuests.exe
+   
+    3. Follow the installation steps:
+    - choose language [english, polish]
+    - confirm installation
+</font>
 
 ---
 # New content
