@@ -33,12 +33,12 @@ END
 
 APPEND CERNDP
 	IF ~~ THEN BEGIN MMCerndp01
-		SAY ~I suggest that we go to Deril's estate as soon as possible. Without a quick end to this case, we will have to look over our shoulders more often than before.~
+		SAY ~I suggest that we go to Deril's estate as soon as possible. Without a quick end to this case, we will have to look over our shoulders even more often than before.~
 		IF ~~ EXIT
 	END
 	
 	IF ~~ THEN BEGIN MMCerndp02
-		SAY ~I suggest that we go to Deril's estate as soon as possible. Without a quick end to this case, we will have to look over our shoulders more often than before.~
+		SAY ~I suggest that we go to Deril's estate as soon as possible. Without a quick end to this case, we will have to look over our shoulders even more often than before.~
 		IF ~~ THEN REPLY ~We've already taken care of it, Cernd. I preferred you to rest longer and spend more time with your son.~  GOTO MMCerndp03
 	END
 	
