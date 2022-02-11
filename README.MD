@@ -10,6 +10,7 @@ This mod expands Cernd's quest finale and adds some new content in case you go d
 with Deril.</font>
 
 ![Select this option](Pictures/1.PNG)
+
 <font size=3>
 (Deril doesn't attack you -> Lagole Gon shows up to rush him -> 
 Deril hands over the child -> the two of them escape through a dimension door)
