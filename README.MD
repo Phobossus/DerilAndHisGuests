@@ -17,20 +17,6 @@ Deril hands over the child -> the two of them escape through a dimension door)
 </font>
 
 ---
-# Installation
-<font size=3>
-
-    1. Unpack the rar file in your game directory
-    (i.e D:\GOG Games\Baldurs Gate 2) 
-
-    2. Run Setup-DerilAndHisGuests.exe
-   
-    3. Follow the installation steps:
-    - choose language [english, polish]
-    - confirm installation
-</font>
-
----
 # New content
 
 Following Deril's escape, Cernd voices his concerns over letting him go and you
@@ -50,6 +36,20 @@ You'll worry about Deril if he actually decides to carry out his threats.
 
 This time though, Deril is a man of his word. He hasn't forgotten about you
 and as soon as he makes some time, you might wake up to a surprise.
+
+---
+# Installation
+<font size=3>
+
+    1. Unpack the rar file in your game directory
+    (i.e D:\GOG Games\Baldurs Gate 2) 
+
+    2. Run Setup-DerilAndHisGuests.exe
+   
+    3. Follow the installation steps:
+    - choose language [english, polish]
+    - confirm installation
+</font>
 
 ---
 
