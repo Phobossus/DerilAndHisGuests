@@ -1,13 +1,13 @@
-BEGIN Thavin
+BEGIN MMTHAVIN
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
-SAY ~Podejrzewałem, że ten głupiec nie potrafi utrzymać języka za zębami, ale to i tak bez znaczenia. Jego los wkrótce się rozstrzygnie, a ja pozbędę się was zanim zdążycie narobić jakichkolwiek szkód.~
-		++ ~Zawołaj Derila lub zejdź mi z drogi, kimkolwiek jesteś ta sprawa cię nie dotyczy.~ GOTO 1
-		++ ~Świetnie, przyda mi się drobna rozgrzewka.~ GOTO 2
+SAY ~I suspected this fool could not keep his mouth shut, though it does not matter. His fate will soon be decided, and I'll get rid of you before you can do any damage.~
+		++ ~Get deril or get out of my way, this does not concern you whoever you are.~ GOTO 1
+		++ ~Great, I could use a little warm up.~ GOTO 2
 END
 
 IF ~~ THEN BEGIN 1
-SAY ~Nic mnie nie obchodzą wasze osobiste utarczki. Filar ma pożytek z jego wpływów w Atkathli i nie pozwolę, by Lagole ponownie nabrał wątpliwości.~ 
+SAY ~I could not care less about your personal skirmishes. The Pillar benefits from his influence in Atkathla and I will not let Lagole get into doubts again.~ 
 IF ~~ THEN DO ~
 	CreateCreature("DEMSUC01", [553.462], 0)
 	CreateVisualEffect("SPCLOUD3", [553.462])
@@ -22,7 +22,7 @@ IF ~~ THEN DO ~
 END
 
 IF ~~ THEN BEGIN 2
-SAY ~Obawiam się, że to wy posłużycie nam za rozgrzewkę. Chodźcie, moje najmilsze, pokażemy Derilowi jak skutecznie rozprawiać się z intruzami.~ 
+SAY ~I'm afraid that you will be the ones warming us up. Come, my dearests, we shall show Deril how to effectively crack down on intruders.~ 
 IF ~~ THEN DO ~
 	CreateCreature("DEMSUC01", [553.462], 0)
 	CreateVisualEffect("SPCLOUD3", [553.462])

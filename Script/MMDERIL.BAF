@@ -19,7 +19,7 @@ THEN
 END
 
 IF
-	AreaCheck("AGAR01")
+	AreaCheck("MMAR01")
 	Allegiance(Myself, ENEMY)
 	Global("DerilTpsCloser", "LOCALS", 0)
 THEN

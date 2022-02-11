@@ -1,27 +1,27 @@
 IF
 	OnCreation()
-	!Global("ExitAGAR01Unsealed", "GLOBAL", 1)
+	!Global("ExitMMAR01Unsealed", "GLOBAL", 1)
 	Global("EnteredDerilGuestRoom", "GLOBAL", 0)
 THEN
 	RESPONSE #100
 		SetGlobal("EnteredDerilGuestRoom", "GLOBAL", 1)
-		TriggerActivation("TranAG1004", FALSE)
+		TriggerActivation("TranMM1004", FALSE)
 		
-		CreateCreature("SASTZI", [629.436], 7)
-		CreateCreature("VERISSA", [464.340], 14)
-		CreateCreature("LAGOLE02", [610.281], 0)
-		CreateCreature("DERIL02", [668.303], 6)
-		CreateCreature("LAROTTLE", [557.491], 7)
-		CreateCreature("MARBLED", [400.364], 14)
+		CreateCreature("MMSASTZI", [629.436], 7)
+		CreateCreature("MMVERISS", [464.340], 14)
+		CreateCreature("MMLAGOLE", [610.281], 0)
+		CreateCreature("MMDERIL", [668.303], 6)
+		CreateCreature("MMLAROTT", [557.491], 7)
+		CreateCreature("MMMARBLE", [400.364], 14)
 		Continue()
 END
 
 // Only visual
 IF
-	Global("SealExitAGAR01", "GLOBAL", 1)
+	Global("SealExitMMAR01", "GLOBAL", 1)
 THEN
 	RESPONSE #100
-		SetGlobal("SealExitAGAR01", "GLOBAL", 2)
+		SetGlobal("SealExitMMAR01", "GLOBAL", 2)
 		PlaySound("EFF_E01")
 		CreateVisualEffect("SPCMWOUI", [223.551])
 END
@@ -64,33 +64,33 @@ END
 
 // Opening up exit to the house in no-karsomir-stolen case
 IF
-	Global("ExitAGAR01Unsealed", "GLOBAL", 0)
+	Global("ExitMMAR01Unsealed", "GLOBAL", 0)
 	Global("StealKarsomir", "GLOBAL", 0)
 	OR(2)
 		Global("PillarEscapesPeacefully", "GLOBAL", 2)
 		Global("PillarMembersSlain", "GLOBAL", 5)
 THEN
 	RESPONSE #100
-		SetGlobal("ExitAGAR01Unsealed", "GLOBAL", 1)
+		SetGlobal("ExitMMAR01Unsealed", "GLOBAL", 1)
 		PlaySound("EFF_E01")
 		CreateVisualEffect("SPCMWOUI", [223.551])
 		DisplayString(Player1, @60)
-		TriggerActivation("TranAG1004", "TRUE")
+		TriggerActivation("TranMM1004", "TRUE")
 END
 
 
 // Opening up exit to the house in karsomir-stolen case
 IF
-	Global("ExitAGAR01Unsealed", "GLOBAL", 0)
+	Global("ExitMMAR01Unsealed", "GLOBAL", 0)
 	GlobalGT("StealKarsomir", "GLOBAL", 0)
 	Global("PillarMembersSlain", "GLOBAL", 4)
 THEN
 	RESPONSE #100
-		SetGlobal("ExitAGAR01Unsealed", "GLOBAL", 1)
+		SetGlobal("ExitMMAR01Unsealed", "GLOBAL", 1)
 		PlaySound("EFF_E01")
 		CreateVisualEffect("SPCMWOUI", [223.551])
 		DisplayString(Player1, @60)
-		TriggerActivation("TranAG1004", "TRUE")
+		TriggerActivation("TranMM1004", "TRUE")
 END
 	
 		

@@ -25,7 +25,7 @@ IF
 THEN 
 	RESPONSE #100
 		SetGlobal("ThavinIsSpawned", "GLOBAL", 1)
-		CreateCreature("THAVIN", [457.556], 12)
+		CreateCreature("MMTHAVIN", [457.556], 12)
 END
 
 IF
@@ -34,7 +34,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("LarottleAr1004Spawned", "GLOBAL", 1)
-		CreateCreature("Larottle", [503.548], 4)
+		CreateCreature("MMLAROTT", [503.548], 4)
 		ActionOverride("larottle", Enemy())
 		ActionOverride("larottle", CreateItem("SW2H10", 0, 0, 0))
 		ActionOverride("larottle",SetItemFlags("SW2H10",IDENTIFIED,TRUE))

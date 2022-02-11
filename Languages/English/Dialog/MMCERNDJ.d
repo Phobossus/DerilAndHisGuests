@@ -67,7 +67,7 @@ APPEND CERNDJ
 	// In response to Deril appearing
 	IF ~~ THEN BEGIN DerilAmbush01
 		SAY ~An ambush during sleep ... He must have been following us for a long time. I was concerned about this scenario, <CHARNAME>. We should have attacked first, but we let him get the honor.~
-		IF ~~ THEN EXTERN ~Deril~ 4
+		IF ~~ THEN EXTERN ~MMDERIL~ 4
 	END 
 	
 	IF ~Global("CerndReactDerilQuestDone", "GLOBAL", 1)~ THEN BEGIN CerndReactPeacefulSolution

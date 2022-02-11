@@ -1,4 +1,4 @@
-BEGIN Larottle
+BEGIN MMLAROTT
 
 IF ~Global("NoticedKarsomir", "GLOBAL", 1) !Dead(Player1)~ THEN BEGIN 0
 	SAY ~The Holy Avenger ... For years have I searched for this blade, and then it came to me. At last my revenge will be complete.~
@@ -17,22 +17,22 @@ END
 
 IF ~~ THEN BEGIN 3
 	SAY ~The mere suggestion that we need your support is offensive enough ... I don't understand why we negotiate with them at all.~
-	IF ~~ EXTERN ~Marble~ 1
+	IF ~~ EXTERN ~MMMARBLE~ 1
 END
 
 IF ~~ THEN BEGIN 4
 	SAY ~Enough! How long are we going to stand here hearing threats from meaningless adventurers?~
-	IF ~~ THEN EXTERN ~Marble~ 5
+	IF ~~ THEN EXTERN ~MMMARBLE~ 5
 END
 
 IF ~~ THEN BEGIN 5
 	SAY ~Quite the contrary, fate smiled at us. We have the unique opportunity to remove someone who would undoubtedly get in our way in the future without hesitation.~
-	IF ~~ THEN EXTERN ~Marble~ 6
+	IF ~~ THEN EXTERN ~MMMARBLE~ 6
 END
 
 IF ~~ THEN BEGIN 6
 	SAY ~This is not an option. We still need the identity of Marble, at least until we get the first permissions.~
-	IF ~~ THEN EXTERN ~Marble~ 7
+	IF ~~ THEN EXTERN ~MMMARBLE~ 7
 END
 
 IF ~Global("StealKarsomir", "GLOBAL", 3)~ THEN BEGIN 7
@@ -49,7 +49,7 @@ IF ~~ THEN BEGIN 8
 END
 
 IF ~~ THEN BEGIN 9
-	SAY ~You have no idea how wrong you are. A sword can be profaned and its power reversed, and I know someone who is willing to help me with this.~
+	SAY ~You have no idea how wrong you are. The sword can be profaned and its power reversed, and I know someone who is willing to help me with this.~
 	IF ~~ THEN GOTO 10
 END
 

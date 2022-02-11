@@ -1,14 +1,14 @@
-BEGIN Deril
+BEGIN MMDERIL
 
 IF ~NumTimesTalkedTo(0) Global("DerilAmbush", "GLOBAL", 0)~ THEN BEGIN 0
 	SAY ~That's you? I was planning to take care of you when it's over, but you spared me the trouble. My guests will surely appreciate this show.~
 	IF ~~ THEN DO ~SetGlobal("DerilFled", "GLOBAL", 2)~
-	EXTERN ~Lagole~ 0
+	EXTERN ~MMLAGOLE~ 0
 END
 
 IF ~~ THEN BEGIN 1
 	SAY ~The spell had no weak point, someone had to deactivate it. Thavin? Never mind ... I'll bring it back and put an end to this matter once and for all.~
-	IF ~~ THEN DO ~SetGlobal("SealExitAGAR01", "GLOBAL", 1)~ GOTO 2
+	IF ~~ THEN DO ~SetGlobal("SealExitMMAR01", "GLOBAL", 1)~ GOTO 2
 END
 
 IF ~~ THEN BEGIN 2

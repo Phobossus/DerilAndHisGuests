@@ -1,0 +1,225 @@
+BACKUP ~MMDerilMansionExtended/Backup~
+
+AUTHOR ~malcolmmillennium~
+
+VERSION ~v1.0~
+
+LANGUAGE
+	~Polish~
+	~polish~
+		~MMDerilMansionExtended/Languages/Polish/MMsetup.tra~
+		~MMDerilMansionExtended/Languages/Polish/MMitems.tra~
+		~MMDerilMansionExtended/Languages/Polish/MMDerilQuests.tra~
+		~MMDerilMansionExtended/Languages/Polish/MMnames.tra~
+LANGUAGE
+	~English~
+	~english~
+		~MMDerilMansionExtended/Languages/English/MMsetup.tra~
+		~MMDerilMansionExtended/Languages/English/MMitems.tra~
+		~MMDerilMansionExtended/Languages/English/MMDerilQuests.tra~
+		~MMDerilMansionExtended/Languages/English/MMnames.tra~
+
+BEGIN @1
+
+ADD_JOURNAL @15 USING ~MMDerilMansionExtended\Languages\%LANGUAGE%\MMDerilQuests.tra~
+ADD_JOURNAL @16 USING ~MMDerilMansionExtended\Languages\%LANGUAGE%\MMDerilQuests.tra~
+
+//** Dialogs
+COMPILE
+	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMCERNDP.d~
+	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMDERILExt.d~
+	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMCERNDJ.d~
+	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMKELDJ.d~
+                            
+// New                      
+	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMTHAVIN.d~
+	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMDERIL.d~
+	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMLAGOLE.d~
+	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMLAROTT.d~
+	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMMARBLE.d~
+	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMVERISS.d~
+
+//** Sounds 
+// Larottle
+
+COPY ~MMDerilMansionExtended/Languages/%LANGUAGE%/LarotP03.WAV~ ~override/~
+COPY ~MMDerilMansionExtended/Languages/%LANGUAGE%/LarotP04.WAV~ ~override/~
+COPY ~MMDerilMansionExtended/Languages/%LANGUAGE%/LarotP06.WAV~ ~override/~
+
+
+//** Spells
+// Verissa's Howl
+COPY ~MMDerilMansionExtended/SPL/MMHOWLVE.SPL~ ~override/~
+    SAY NAME1 @63
+
+//** Scripts
+
+// Area scripts
+COMPILE ~MMDerilMansionExtended/Script/MMAR1004.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMAR01.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMAR02.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMEXIAMB.baf~
+
+// Creature scripts
+COMPILE ~MMDerilMansionExtended/Script/MMTHAVIN.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMTHAMAG.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMSASTZI.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMVERISS.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMLAGOLE.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMDERIL.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMLAROTT.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMMARBLE.baf~
+
+COMPILE ~MMDerilMansionExtended/Script/MMCERND.baf~
+
+// Cutscenes
+COMPILE ~MMDerilMansionExtended/Script/MMPILAMB.baf~
+
+
+
+// Generic scripts
+COMPILE ~MMDerilMansionExtended/Script/MMPLAYER.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMSHOUT.baf~
+COMPILE ~MMDerilMansionExtended/Script/MMSEARCH.baf~
+ 
+//** Creatures
+// Thavin
+COPY ~MMDerilMansionExtended/CRE/MMTHAVIN.CRE~ ~override/~
+	SAY NAME1 @10
+	SAY NAME2 @10
+	WRITE_ASCII SCRIPT_OVERRIDE ~MMTHAVIN~
+	WRITE_ASCII SCRIPT_DEFAULT ~MMTHAMAG~
+	WRITE_ASCII SCRIPT_GENERAL ~MMSEARCH~
+	WRITE_ASCII DIALOG ~MMTHAVIN~
+
+// Sas'Tzi
+COPY ~MMDerilMansionExtended/CRE/MMSASTZI.CRE~ ~override/~
+	SAY NAME1 @11
+	SAY NAME2 @11
+	WRITE_ASCII SCRIPT_OVERRIDE ~MMSASTZI~
+	WRITE_ASCII SCRIPT_DEFAULT ~MMSHOUT~
+	WRITE_ASCII SCRIPT_GENERAL ~MMSEARCH~
+
+// Verissa
+COPY ~MMDerilMansionExtended/CRE/MMVERISS.CRE~ ~override/~
+	SAY NAME1 @13
+	SAY NAME2 @13
+	WRITE_ASCII SCRIPT_OVERRIDE ~MMVERISS~
+	WRITE_ASCII SCRIPT_DEFAULT ~MMSHOUT~
+	WRITE_ASCII SCRIPT_GENERAL ~MMSEARCH~
+	WRITE_ASCII DIALOG ~MMVERISS~
+
+// Lagole Gon
+COPY ~MMDerilMansionExtended/CRE/MMLAGOLE.CRE~ ~override/~
+	WRITE_ASCII SCRIPT_OVERRIDE ~MMLAGOLE~
+	WRITE_ASCII SCRIPT_GENERAL ~MMSEARCH~
+	WRITE_ASCII SCRIPT_DEFAULT ~MMSHOUT~
+	WRITE_ASCII DIALOG ~MMLAGOLE~
+	
+// Deril
+COPY ~MMDerilMansionExtended/CRE/MMDERIL.CRE~ ~override/~
+	WRITE_ASCII SCRIPT_OVERRIDE ~MMDERIL~
+	WRITE_ASCII SCRIPT_GENERAL ~MMSEARCH~
+	WRITE_ASCII DIALOG ~MMDERIL~
+	
+// Larottle
+COPY ~MMDerilMansionExtended/CRE/MMLAROTT.CRE~ ~override/~
+	SAY NAME1 @12
+	SAY NAME2 @12
+	WRITE_ASCII SCRIPT_OVERRIDE ~MMLAROTT~
+	WRITE_ASCII SCRIPT_DEFAULT ~MMSHOUT~
+	WRITE_ASCII SCRIPT_GENERAL ~MMSEARCH~
+	WRITE_ASCII DIALOG ~MMLAROTT~
+	SAY SELECT_COMMON1 @47
+	SAY SELECT_COMMON2 @48
+	SAY BATTLE_CRY1 @47
+	SAY BATTLE_CRY2 @48
+
+// Lord Marble
+COPY ~MMDerilMansionExtended/CRE/MMMARBLE.CRE~ ~override/~
+	SAY NAME1 @14
+	SAY NAME2 @14
+	WRITE_ASCII SCRIPT_OVERRIDE ~MMMARBLE~
+	WRITE_ASCII SCRIPT_DEFAULT ~MMSHOUT~
+	WRITE_ASCII SCRIPT_GENERAL ~MMSEARCH~
+	WRITE_ASCII DIALOG ~MMMARBLE~
+
+/** ITEMS */
+// Szarfa Verissy
+COPY ~MMDerilMansionExtended/Items/MMVERBEL.ITM~ ~override/~
+    SAY NAME2 @80
+    SAY IDENTIFIED_DESC @81
+
+// Entrance to Deril's guest room
+COPY_EXISTING ~AR1004.ARE~ ~OVERRIDE~
+// Travel Region at DOOR02 (Deril's guest room)	
+	LPF fj_are_structure
+	  INT_VAR
+	  fj_loc_x       = 347
+      fj_loc_y       = 618
+      fj_orientation = 14   //SE
+	  fj_debug = 1
+      STR_VAR
+      fj_structure_type = entrance
+      fj_name           = Exit490
+	END
+	LPF fj_are_structure
+	  INT_VAR
+	  fj_type         = 2    //travel
+	  fj_box_left     = 204
+	  fj_box_top      = 522
+	  fj_box_right    = 243
+	  fj_box_bottom   = 620
+	  fj_cursor_idx   = 30   //door
+	  fj_vertex_0     = 204 + (620 << 16)
+	  fj_vertex_1     = 243 + (593 << 16)
+	  fj_vertex_2     = 243 + (522 << 16)
+	  fj_vertex_3     = 204 + (548 << 16)
+	  fj_flags = 0x00000004 // party required
+	  STR_VAR
+	  fj_structure_type   = region
+	  fj_name             = TranMMAR01
+	  fj_destination_area = MMAR01
+	  fj_destination_name = ExitMMAR01
+    END
+
+// Entrance to Deril's main room from Guest Room
+COPY ~MMDerilMansionExtended/ARE/MMAR01.ARE~ ~override/~
+	LPF fj_are_structure
+	  INT_VAR
+	  fj_loc_x       = 304
+      fj_loc_y       = 472
+      fj_orientation = 8   //NE
+	  fj_debug = 1
+      STR_VAR
+      fj_structure_type = entrance
+      fj_name           = ExitMMAR01
+	END
+	LPF fj_are_structure
+	  INT_VAR
+	  fj_type         = 2    //travel
+	  fj_box_left     = 148
+	  fj_box_top      = 526
+	  fj_box_right    = 253
+	  fj_box_bottom   = 647
+	  fj_cursor_idx   = 30   //door
+	  fj_vertex_0     = 148 + (526 << 16)
+	  fj_vertex_1     = 253 + (526 << 16)
+	  fj_vertex_2     = 253 + (647 << 16)
+	  fj_vertex_3     = 148 + (647 << 16)
+	  fj_flags = 0x00000004 // party required
+	  STR_VAR
+	  fj_structure_type   = region
+	  fj_name             = TranMM1004
+	  fj_destination_area = AR1004
+	  fj_destination_name = Exit490
+    END
+	
+// Ambush area
+COPY ~MMDerilMansionExtended/ARE/MMAR02.ARE~ ~override/~
+		
+EXTEND_TOP ~AR1004.BCS~ ~MMDerilMansionExtended/Script/MMAR1004.baf~
+
+EXTEND_BOTTOM ~PLAYER1D.BCS~ ~MMDerilMansionExtended/Script/MMPLAYER.baf~
+EXTEND_BOTTOM ~CERND.BCS~ ~MMDerilMansionExtended/Script/MMCERND.baf~
+		

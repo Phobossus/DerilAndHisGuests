@@ -1,8 +1,8 @@
-BEGIN Lagole
+BEGIN MMLAGOLE
 
 IF ~~ THEN BEGIN 0
 	SAY ~The seal you have prepared is useless, as it can be crossed by just any fools. Perhaps trusting your skills was a mistake?~
-	IF ~~ THEN EXTERN ~Deril~ 1
+	IF ~~ THEN EXTERN ~MMDERIL~ 1
 END
 
 IF ~Global("DerilDefeated", "GLOBAL", 3) !Allegiance(Myself, ENEMY)~ THEN BEGIN 1
@@ -38,7 +38,7 @@ END
 
 IF ~~ THEN BEGIN 5
 	SAY ~Even so, by killing Deril, you turned the plans of today he was a part of into ruins. Weaknesses can be worked on, but now I have to start all over again. As your punishment, you will share his fate.~
-	IF ~~ THEN REPLY ~Killing me won't bring Deril back to life, and I have no reason to fight you. Can we not part in peace?~ EXTERN ~Verissa~ 0
+	IF ~~ THEN REPLY ~Killing me won't bring Deril back to life, and I have no reason to fight you. Can we not part in peace?~ EXTERN ~MMVERISS~ 0
 	IF ~CheckStatLT(Player1, 16, CHR)~ THEN REPLY ~I believe my death is not in your interest.~ GOTO 6
 	IF ~CheckStatGT(Player1, 15, CHR)~ THEN REPLY ~I believe my death is not in your interest.~ GOTO 7
 	IF ~~ THEN REPLY ~Go ahead, one more fight makes no difference to me.~ GOTO 4
@@ -59,10 +59,10 @@ END
 	
 IF ~~ THEN BEGIN 8
 	SAY ~What would be the benefit of letting you leave this chamber alive?~
-	IF ~~ THEN REPLY ~I have a power that neither Deril nor your demonologist could match. You will most certainly find a use for it.~ EXTERN ~Larottle~ 2
-	IF ~~ THEN REPLY ~Tell me about your plans and I will give a thought to how I can help with them.~ EXTERN ~Marble~ 2
-	IF ~~ THEN REPLY ~I spent a lot of time in Amn and Atkathla to make many ... useful contacts.~ EXTERN ~Marble~ 3
-	IF ~PartyGoldGT(10000)~ THEN REPLY ~Although I am not a nobleman, I have quite a fortune. Ten thousand gold for all the trouble I have caused, and a promise not to get in your way again.~ EXTERN ~Marble~ 0
+	IF ~~ THEN REPLY ~I have a power that neither Deril nor your demonologist could match. You will most certainly find a use for it.~ EXTERN ~MMLAROTT~ 2
+	IF ~~ THEN REPLY ~Tell me about your plans and I will give a thought to how I can help with them.~ EXTERN ~MMMARBLE~ 2
+	IF ~~ THEN REPLY ~I spent a lot of time in Amn and Atkathla to make many ... useful contacts.~ EXTERN ~MMMARBLE~ 3
+	IF ~PartyGoldGT(10000)~ THEN REPLY ~Although I am not a nobleman, I have quite a fortune. Ten thousand gold for all the trouble I have caused, and a promise not to get in your way again.~ EXTERN ~MMMARBLE~ 0
 END
 
 IF ~~ THEN BEGIN 9

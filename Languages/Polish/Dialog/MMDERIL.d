@@ -1,14 +1,14 @@
-BEGIN Deril
+BEGIN MMDERIL
 
 IF ~NumTimesTalkedTo(0) Global("DerilAmbush", "GLOBAL", 0)~ THEN BEGIN 0
 	SAY ~To wy? Planowałem się wami zająć, gdy już będzie po wszystkim, ale oszczędziliście mi zachodu. Moi goście z pewnością docenią to przedstawienie.~
 	IF ~~ THEN DO ~SetGlobal("DerilFled", "GLOBAL", 2)~
-	EXTERN ~Lagole~ 0
+	EXTERN ~MMLAGOLE~ 0
 END
 
 IF ~~ THEN BEGIN 1
 	SAY ~Zaklęcie nie miało żadnej luki, ktoś musiał je uszkodzić. Thavin? Mniejsza o to... Przywrócę je i zakończę tę sprawę raz na zawsze.~
-	IF ~~ THEN DO ~SetGlobal("SealExitAGAR01", "GLOBAL", 1)~ GOTO 2
+	IF ~~ THEN DO ~SetGlobal("SealExitMMAR01", "GLOBAL", 1)~ GOTO 2
 END
 
 IF ~~ THEN BEGIN 2

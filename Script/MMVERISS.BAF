@@ -80,7 +80,7 @@ THEN
 		SetGlobal("halfHpDef", "LOCALS", 2)
 
 		DisplayStringHead(Myself, @64)
-		ReallyForceSpellRES("AGHOWLVE", LastSeenBy(Myself))
+		ReallyForceSpellRES("MMHOWLVE", LastSeenBy(Myself))
 		
 		Wait(1)
 		ReallyForceSpell(LastSeenBy(Myself), WIZARD_VAMPIRIC_TOUCH)

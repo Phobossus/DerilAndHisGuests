@@ -13,7 +13,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("PillarMembersArrive", "GLOBAL", 2)
-		CreateCreatureDoor("SASTZI", [904.388], SW)
+		CreateCreatureDoor("MMSASTZI", [904.388], SW)
 		
 		SetGlobalTimer("Thavin", "GLOBAL", ONE_ROUND)
 		SetGlobalTimer("MarbleLarottle", "GLOBAL", TWO_ROUNDS)
@@ -29,7 +29,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("AmbushSpawnThavin", "GLOBAL", 1)
-		CreateCreatureDoor("THAVIN", [365.272], SE)
+		CreateCreatureDoor("MMTHAVIN", [365.272], SE)
 		CreateCreatureDoor("DEMSUC01", [331.305], SE)
 END
 
@@ -48,9 +48,9 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("SpawnMarbleLarottle", "GLOBAL", 1)
-		CreateCreatureDoor("MARBLED", [360.422], E)
+		CreateCreatureDoor("MMMARBLE", [360.422], E)
 		Wait(6)	
-		CreateCreatureDoor("LAROTTLE", [863.223], W)
+		CreateCreatureDoor("MMLAROTT", [863.223], W)
 END
 
 // Verissa, Lagole arrive (should be right after Thavin's time stop ends)
@@ -60,9 +60,9 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("SpawnVerissaLagole", "GLOBAL", 1)
-		CreateCreatureDoor("VERISSA", [618.286], S)
+		CreateCreatureDoor("MMVERISS", [618.286], S)
 		Wait(12)
-		CreateCreatureDoor("LAGOLE02", [630.462], N)
+		CreateCreatureDoor("MMLAGOLE", [630.462], N)
 END		
 		
 IF

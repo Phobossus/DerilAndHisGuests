@@ -1,11 +1,11 @@
-C:MoveToArea("AGAR01")
-C:MoveToArea("AGAR01")
+C:MoveToArea("MMAR01")
+C:MoveToArea("MMAR01")
 C:CreateItem("SW2H10")
 
 C:CreateCreature("LAROTTLE")
-C:CreateCreature("MARBLED")
+C:CreateCreature("MMMARBLE")
 C:CreateItem("SW2H10")
-C:CreateItem("VERBELT")
+C:CreateItem("MMVERBELT")
 
 C:GetGlobal("PillarMembersSlain","GLOBAL") while p
 C:GetGlobal("LarotDefeated", "GLOBAL")

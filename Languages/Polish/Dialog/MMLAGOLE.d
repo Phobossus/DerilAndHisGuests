@@ -1,8 +1,8 @@
-BEGIN Lagole
+BEGIN MMLAGOLE
 
 IF ~~ THEN BEGIN 0
 	SAY ~Pieczęć, którą przygotowałeś jest bezużyteczna, skoro mogą ją przekroczyć byle głupcy. Być może zaufanie twoim umiejętnościom było błędem?~
-	IF ~~ THEN EXTERN ~Deril~ 1
+	IF ~~ THEN EXTERN ~MMDERIL~ 1
 END
 
 IF ~Global("DerilDefeated", "GLOBAL", 3) !Allegiance(Myself, ENEMY)~ THEN BEGIN 1
@@ -38,7 +38,7 @@ END
 
 IF ~~ THEN BEGIN 5
 	SAY ~Jednak zabijając Derila, jednocześnie obróciliście w proch poczynione dziś plany, których był częścią. Nad słabościami da się popracować, ale teraz muszę zacząć wszystko od nowa. Za karę podzielicie jego los.~
-	IF ~~ THEN REPLY ~Zabicie mnie nie przywróci Derila do żywych, a ja nie mam powodu, by z wami walczyć. Czy nie możemy rozstać się w pokoju?~ EXTERN ~Verissa~ 0
+	IF ~~ THEN REPLY ~Zabicie mnie nie przywróci Derila do żywych, a ja nie mam powodu, by z wami walczyć. Czy nie możemy rozstać się w pokoju?~ EXTERN ~MMVERISS~ 0
 	IF ~CheckStatLT(Player1, 16, CHR)~ THEN REPLY ~Sądzę, że moja śmierć nie leży w waszym interesie.~ GOTO 6
 	IF ~CheckStatGT(Player1, 15, CHR)~ THEN REPLY ~Sądzę, że moja śmierć nie leży w waszym interesie.~ GOTO 7
 	IF ~~ THEN REPLY ~Śmiało, jedna walka więcej nie robi mi różnicy.~ GOTO 4
@@ -59,10 +59,10 @@ END
 	
 IF ~~ THEN BEGIN 8
 	SAY ~Jaką korzyść miałbym mieć w tym, by pozwolić ci na opuszczenie tej komnaty żywym?~
-	IF ~~ THEN REPLY ~Posiadam moc, z którą nie mógł równać się ani Deril, ani wasz demonolog. Z pewnością znajdziecie dla niej zastosowanie.~ EXTERN ~Larottle~ 2
-	IF ~~ THEN REPLY ~Opowiedzcie mi o waszych planach, a ja zastanowię się jak mogę w nich pomóc.~ EXTERN ~Marble~ 2
-	IF ~~ THEN REPLY ~Spędziłem wiele czasu w Amn i Atkathli, by nawiązać wiele... przydatnych znajomości.~ EXTERN ~Marble~ 3
-	IF ~PartyGoldGT(10000)~ THEN REPLY ~Choć nie należę do szlachty, mam spory majątek. Dziesięć tysięcy sztuk złota za wszystkie nieprzyjemności, których jestem przyczyną oraz obietnica, że więcej nie wejdę wam w drogę.~ EXTERN ~Marble~ 0
+	IF ~~ THEN REPLY ~Posiadam moc, z którą nie mógł równać się ani Deril, ani wasz demonolog. Z pewnością znajdziecie dla niej zastosowanie.~ EXTERN ~MMLAROTT~ 2
+	IF ~~ THEN REPLY ~Opowiedzcie mi o waszych planach, a ja zastanowię się jak mogę w nich pomóc.~ EXTERN ~MMMARBLE~ 2
+	IF ~~ THEN REPLY ~Spędziłem wiele czasu w Amn i Atkathli, by nawiązać wiele... przydatnych znajomości.~ EXTERN ~MMMARBLE~ 3
+	IF ~PartyGoldGT(10000)~ THEN REPLY ~Choć nie należę do szlachty, mam spory majątek. Dziesięć tysięcy sztuk złota za wszystkie nieprzyjemności, których jestem przyczyną oraz obietnica, że więcej nie wejdę wam w drogę.~ EXTERN ~MMMARBLE~ 0
 END
 
 IF ~~ THEN BEGIN 9

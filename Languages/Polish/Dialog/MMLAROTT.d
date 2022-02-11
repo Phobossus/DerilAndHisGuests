@@ -1,4 +1,4 @@
-BEGIN Larottle
+BEGIN MMLAROTT
 
 IF ~Global("NoticedKarsomir", "GLOBAL", 1) !Dead(Player1)~ THEN BEGIN 0
 	SAY ~Święty Mściciel... Latami poszukiwałem tego ostrza, aż w końcu samo do mnie przyszło. Nareszcie moja zemsta będzie kompletna.~
@@ -17,22 +17,22 @@ END
 
 IF ~~ THEN BEGIN 3
 	SAY ~Sama sugestia, że potrzebujemy waszego wsparcia jest wystarczającą obrazą... Nie rozumiem, dlaczego w ogóle podejmujemy z nimi negocjacje.~
-	IF ~~ EXTERN ~Marble~ 1
+	IF ~~ EXTERN ~MMMARBLE~ 1
 END
 
 IF ~~ THEN BEGIN 4
 	SAY ~Dość! Jak długo zamierzamy stać tutaj, wysłuchując gróźb od nic nie znaczących awanturników?~
-	IF ~~ THEN EXTERN ~Marble~ 5
+	IF ~~ THEN EXTERN ~MMMARBLE~ 5
 END
 
 IF ~~ THEN BEGIN 5
 	SAY ~Wprost przeciwnie, los uśmiechnał się do nas. Mamy niepowtarzalną okazję usunąć kogoś, kto niewątpliwie bez wahania wszedłby nam w drogę w przyszłości.~
-	IF ~~ THEN EXTERN ~Marble~ 6
+	IF ~~ THEN EXTERN ~MMMARBLE~ 6
 END
 
 IF ~~ THEN BEGIN 6
 	SAY ~To nie wchodzi w grę. Wciąż potrzebujemy tożsamości Marble, przynajmniej do czasu uzyskania pierwszych pozwoleń.~
-	IF ~~ THEN EXTERN ~Marble~ 7
+	IF ~~ THEN EXTERN ~MMMARBLE~ 7
 END
 
 IF ~Global("StealKarsomir", "GLOBAL", 3)~ THEN BEGIN 7

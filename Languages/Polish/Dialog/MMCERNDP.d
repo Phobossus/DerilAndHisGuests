@@ -18,7 +18,7 @@ EXTEND_BOTTOM CERNDP 3
 		SetGlobal("KickedOut","LOCALS",0)
 		JoinParty()
 	~ 
-  GOTO AGCerndp01
+  GOTO MMCerndp01
   
 // When we visit CERND in druid grove, but we've already handled Deril without him
   IF ~Global("DerilQuestAccepted", "GLOBAL", 1) Global("DerilQuestDone", "GLOBAL", 1)~ 
@@ -27,22 +27,22 @@ EXTEND_BOTTOM CERNDP 3
 		SetGlobal("KickedOut","LOCALS",0)
 		JoinParty()
 	~ 
-  GOTO AGCerndp02
+  GOTO MMCerndp02
   
 END
 
 APPEND CERNDP
-	IF ~~ THEN BEGIN AGCerndp01
+	IF ~~ THEN BEGIN MMCerndp01
 		SAY ~Proponuję, abyśmy czym prędzej udali się do posiadłości Derila. Bez szybkiego zakończenia tej sprawy będziemy musieli oglądać się za siebie jeszcze częściej niż dotychczas.~
 		IF ~~ EXIT
 	END
 	
-	IF ~~ THEN BEGIN AGCerndp02
+	IF ~~ THEN BEGIN MMCerndp02
 		SAY ~Proponuję, abyśmy czym prędzej udali się do posiadłości Derila. Bez szybkiego zakończenia tej sprawy będziemy musieli oglądać się za siebie jeszcze częściej niż dotychczas.~
-		IF ~~ THEN REPLY ~Juz się tym zajęliśmy, Cerndzie. Wolałem, byś dłużej odpoczął i spędził więcej czasu z synem.~  GOTO AGCerndp03
+		IF ~~ THEN REPLY ~Juz się tym zajęliśmy, Cerndzie. Wolałem, byś dłużej odpoczął i spędził więcej czasu z synem.~  GOTO MMCerndp03
 	END
 	
-	IF ~~ THEN BEGIN AGCerndp03
+	IF ~~ THEN BEGIN MMCerndp03
 		SAY ~Ja... dziękuję, <CHARNAME>. Chciałem w tym uczestniczyć, w końcu to ja wciągnąłem cię w konflikt z Derilem. Wiedz jednak, że doceniam twój gest. Mam nadzieję, że obyło się bez większych problemów.~
 		IF ~~ EXIT
 	END

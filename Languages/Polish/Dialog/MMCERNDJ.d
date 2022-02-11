@@ -67,7 +67,7 @@ APPEND CERNDJ
 	// In response to Deril appearing
 	IF ~~ THEN BEGIN DerilAmbush01
 		SAY ~Zasadzka w trakcie snu... Musiał nas śledzić przez dłuższy czas. Obawiałem się tego scenariusza, <CHARNAME>. Powinniśmy byli zaatakować pierwsi, ale pozwoliliśmy, aby to jemu przypadł ten zaszczyt.~
-		IF ~~ THEN EXTERN ~Deril~ 4
+		IF ~~ THEN EXTERN ~MMDERIL~ 4
 	END 
 	
 	IF ~Global("CerndReactDerilQuestDone", "GLOBAL", 1)~ THEN BEGIN CerndReactPeacefulSolution

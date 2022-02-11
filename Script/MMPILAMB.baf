@@ -7,7 +7,7 @@ THEN
 		Wait(2)
 		DisplayStringHead(Player1, @61)
 		Wait(3)
-		CreateCreatureDoor("DERIL02", [615.200], S)
+		CreateCreatureDoor("MMDERIL", [615.200], S)
 		Wait(6)
 		EndCutSceneMode()
 END
