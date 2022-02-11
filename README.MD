@@ -15,6 +15,7 @@ with Deril.</font>
 (Deril doesn't attack you -> Lagole Gon shows up to rush him -> 
 Deril hands over the child -> the two of them escape through a dimension door)
 </font>
+
 ---
 # Installation
 <font size=3>
