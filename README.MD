@@ -21,7 +21,7 @@ Deril hands over the child -> the two of them escape through a dimension door)
 <font size=3>
 
     1. Unpack the rar file in your game directory
-    (i.e D:\GOG Games\Baldurs Gate 2)
+    (i.e D:\GOG Games\Baldurs Gate 2) 
 
     2. Run Setup-DerilAndHisGuests.exe
    
