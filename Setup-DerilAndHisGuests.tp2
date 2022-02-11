@@ -1,4 +1,4 @@
-BACKUP ~MMDerilMansionExtended/Backup~
+BACKUP ~DerilAndHisGuests/Backup~
 
 AUTHOR ~malcolmmillennium~
 
@@ -7,84 +7,84 @@ VERSION ~v1.0~
 LANGUAGE
 	~Polish~
 	~polish~
-		~MMDerilMansionExtended/Languages/Polish/MMsetup.tra~
-		~MMDerilMansionExtended/Languages/Polish/MMitems.tra~
-		~MMDerilMansionExtended/Languages/Polish/MMDerilQuests.tra~
-		~MMDerilMansionExtended/Languages/Polish/MMnames.tra~
+		~DerilAndHisGuests/Languages/Polish/MMsetup.tra~
+		~DerilAndHisGuests/Languages/Polish/MMitems.tra~
+		~DerilAndHisGuests/Languages/Polish/MMDerilQuests.tra~
+		~DerilAndHisGuests/Languages/Polish/MMnames.tra~
 LANGUAGE
 	~English~
 	~english~
-		~MMDerilMansionExtended/Languages/English/MMsetup.tra~
-		~MMDerilMansionExtended/Languages/English/MMitems.tra~
-		~MMDerilMansionExtended/Languages/English/MMDerilQuests.tra~
-		~MMDerilMansionExtended/Languages/English/MMnames.tra~
+		~DerilAndHisGuests/Languages/English/MMsetup.tra~
+		~DerilAndHisGuests/Languages/English/MMitems.tra~
+		~DerilAndHisGuests/Languages/English/MMDerilQuests.tra~
+		~DerilAndHisGuests/Languages/English/MMnames.tra~
 
 BEGIN @1
 
-ADD_JOURNAL @15 USING ~MMDerilMansionExtended\Languages\%LANGUAGE%\MMDerilQuests.tra~
-ADD_JOURNAL @16 USING ~MMDerilMansionExtended\Languages\%LANGUAGE%\MMDerilQuests.tra~
+ADD_JOURNAL @15 USING ~DerilAndHisGuests\Languages\%LANGUAGE%\MMDerilQuests.tra~
+ADD_JOURNAL @16 USING ~DerilAndHisGuests\Languages\%LANGUAGE%\MMDerilQuests.tra~
 
 //** Dialogs
 COMPILE
-	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMCERNDP.d~
-	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMDERILExt.d~
-	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMCERNDJ.d~
-	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMKELDJ.d~
+	~DerilAndHisGuests/Languages/%LANGUAGE%/Dialog/MMCERNDP.d~
+	~DerilAndHisGuests/Languages/%LANGUAGE%/Dialog/MMDERILExt.d~
+	~DerilAndHisGuests/Languages/%LANGUAGE%/Dialog/MMCERNDJ.d~
+	~DerilAndHisGuests/Languages/%LANGUAGE%/Dialog/MMKELDJ.d~
                             
 // New                      
-	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMTHAVIN.d~
-	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMDERIL.d~
-	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMLAGOLE.d~
-	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMLAROTT.d~
-	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMMARBLE.d~
-	~MMDerilMansionExtended/Languages/%LANGUAGE%/Dialog/MMVERISS.d~
+	~DerilAndHisGuests/Languages/%LANGUAGE%/Dialog/MMTHAVIN.d~
+	~DerilAndHisGuests/Languages/%LANGUAGE%/Dialog/MMDERIL.d~
+	~DerilAndHisGuests/Languages/%LANGUAGE%/Dialog/MMLAGOLE.d~
+	~DerilAndHisGuests/Languages/%LANGUAGE%/Dialog/MMLAROTT.d~
+	~DerilAndHisGuests/Languages/%LANGUAGE%/Dialog/MMMARBLE.d~
+	~DerilAndHisGuests/Languages/%LANGUAGE%/Dialog/MMVERISS.d~
 
 //** Sounds 
 // Larottle
 
-COPY ~MMDerilMansionExtended/Languages/%LANGUAGE%/LarotP03.WAV~ ~override/~
-COPY ~MMDerilMansionExtended/Languages/%LANGUAGE%/LarotP04.WAV~ ~override/~
-COPY ~MMDerilMansionExtended/Languages/%LANGUAGE%/LarotP06.WAV~ ~override/~
+COPY ~DerilAndHisGuests/Languages/%LANGUAGE%/LarotP03.WAV~ ~override/~
+COPY ~DerilAndHisGuests/Languages/%LANGUAGE%/LarotP04.WAV~ ~override/~
+COPY ~DerilAndHisGuests/Languages/%LANGUAGE%/LarotP06.WAV~ ~override/~
 
 
 //** Spells
 // Verissa's Howl
-COPY ~MMDerilMansionExtended/SPL/MMHOWLVE.SPL~ ~override/~
+COPY ~DerilAndHisGuests/SPL/MMHOWLVE.SPL~ ~override/~
     SAY NAME1 @63
 
 //** Scripts
 
 // Area scripts
-COMPILE ~MMDerilMansionExtended/Script/MMAR1004.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMAR01.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMAR02.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMEXIAMB.baf~
+COMPILE ~DerilAndHisGuests/Script/MMAR1004.baf~
+COMPILE ~DerilAndHisGuests/Script/MMAR01.baf~
+COMPILE ~DerilAndHisGuests/Script/MMAR02.baf~
+COMPILE ~DerilAndHisGuests/Script/MMEXIAMB.baf~
 
 // Creature scripts
-COMPILE ~MMDerilMansionExtended/Script/MMTHAVIN.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMTHAMAG.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMSASTZI.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMVERISS.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMLAGOLE.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMDERIL.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMLAROTT.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMMARBLE.baf~
+COMPILE ~DerilAndHisGuests/Script/MMTHAVIN.baf~
+COMPILE ~DerilAndHisGuests/Script/MMTHAMAG.baf~
+COMPILE ~DerilAndHisGuests/Script/MMSASTZI.baf~
+COMPILE ~DerilAndHisGuests/Script/MMVERISS.baf~
+COMPILE ~DerilAndHisGuests/Script/MMLAGOLE.baf~
+COMPILE ~DerilAndHisGuests/Script/MMDERIL.baf~
+COMPILE ~DerilAndHisGuests/Script/MMLAROTT.baf~
+COMPILE ~DerilAndHisGuests/Script/MMMARBLE.baf~
 
-COMPILE ~MMDerilMansionExtended/Script/MMCERND.baf~
+COMPILE ~DerilAndHisGuests/Script/MMCERND.baf~
 
 // Cutscenes
-COMPILE ~MMDerilMansionExtended/Script/MMPILAMB.baf~
+COMPILE ~DerilAndHisGuests/Script/MMPILAMB.baf~
 
 
 
 // Generic scripts
-COMPILE ~MMDerilMansionExtended/Script/MMPLAYER.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMSHOUT.baf~
-COMPILE ~MMDerilMansionExtended/Script/MMSEARCH.baf~
+COMPILE ~DerilAndHisGuests/Script/MMPLAYER.baf~
+COMPILE ~DerilAndHisGuests/Script/MMSHOUT.baf~
+COMPILE ~DerilAndHisGuests/Script/MMSEARCH.baf~
  
 //** Creatures
 // Thavin
-COPY ~MMDerilMansionExtended/CRE/MMTHAVIN.CRE~ ~override/~
+COPY ~DerilAndHisGuests/CRE/MMTHAVIN.CRE~ ~override/~
 	SAY NAME1 @10
 	SAY NAME2 @10
 	WRITE_ASCII SCRIPT_OVERRIDE ~MMTHAVIN~
@@ -93,7 +93,7 @@ COPY ~MMDerilMansionExtended/CRE/MMTHAVIN.CRE~ ~override/~
 	WRITE_ASCII DIALOG ~MMTHAVIN~
 
 // Sas'Tzi
-COPY ~MMDerilMansionExtended/CRE/MMSASTZI.CRE~ ~override/~
+COPY ~DerilAndHisGuests/CRE/MMSASTZI.CRE~ ~override/~
 	SAY NAME1 @11
 	SAY NAME2 @11
 	WRITE_ASCII SCRIPT_OVERRIDE ~MMSASTZI~
@@ -101,7 +101,7 @@ COPY ~MMDerilMansionExtended/CRE/MMSASTZI.CRE~ ~override/~
 	WRITE_ASCII SCRIPT_GENERAL ~MMSEARCH~
 
 // Verissa
-COPY ~MMDerilMansionExtended/CRE/MMVERISS.CRE~ ~override/~
+COPY ~DerilAndHisGuests/CRE/MMVERISS.CRE~ ~override/~
 	SAY NAME1 @13
 	SAY NAME2 @13
 	WRITE_ASCII SCRIPT_OVERRIDE ~MMVERISS~
@@ -110,20 +110,20 @@ COPY ~MMDerilMansionExtended/CRE/MMVERISS.CRE~ ~override/~
 	WRITE_ASCII DIALOG ~MMVERISS~
 
 // Lagole Gon
-COPY ~MMDerilMansionExtended/CRE/MMLAGOLE.CRE~ ~override/~
+COPY ~DerilAndHisGuests/CRE/MMLAGOLE.CRE~ ~override/~
 	WRITE_ASCII SCRIPT_OVERRIDE ~MMLAGOLE~
 	WRITE_ASCII SCRIPT_GENERAL ~MMSEARCH~
 	WRITE_ASCII SCRIPT_DEFAULT ~MMSHOUT~
 	WRITE_ASCII DIALOG ~MMLAGOLE~
 	
 // Deril
-COPY ~MMDerilMansionExtended/CRE/MMDERIL.CRE~ ~override/~
+COPY ~DerilAndHisGuests/CRE/MMDERIL.CRE~ ~override/~
 	WRITE_ASCII SCRIPT_OVERRIDE ~MMDERIL~
 	WRITE_ASCII SCRIPT_GENERAL ~MMSEARCH~
 	WRITE_ASCII DIALOG ~MMDERIL~
 	
 // Larottle
-COPY ~MMDerilMansionExtended/CRE/MMLAROTT.CRE~ ~override/~
+COPY ~DerilAndHisGuests/CRE/MMLAROTT.CRE~ ~override/~
 	SAY NAME1 @12
 	SAY NAME2 @12
 	WRITE_ASCII SCRIPT_OVERRIDE ~MMLAROTT~
@@ -136,7 +136,7 @@ COPY ~MMDerilMansionExtended/CRE/MMLAROTT.CRE~ ~override/~
 	SAY BATTLE_CRY2 @48
 
 // Lord Marble
-COPY ~MMDerilMansionExtended/CRE/MMMARBLE.CRE~ ~override/~
+COPY ~DerilAndHisGuests/CRE/MMMARBLE.CRE~ ~override/~
 	SAY NAME1 @14
 	SAY NAME2 @14
 	WRITE_ASCII SCRIPT_OVERRIDE ~MMMARBLE~
@@ -146,7 +146,7 @@ COPY ~MMDerilMansionExtended/CRE/MMMARBLE.CRE~ ~override/~
 
 /** ITEMS */
 // Szarfa Verissy
-COPY ~MMDerilMansionExtended/Items/MMVERBEL.ITM~ ~override/~
+COPY ~DerilAndHisGuests/Items/MMVERBEL.ITM~ ~override/~
     SAY NAME2 @80
     SAY IDENTIFIED_DESC @81
 
@@ -184,7 +184,7 @@ COPY_EXISTING ~AR1004.ARE~ ~OVERRIDE~
     END
 
 // Entrance to Deril's main room from Guest Room
-COPY ~MMDerilMansionExtended/ARE/MMAR01.ARE~ ~override/~
+COPY ~DerilAndHisGuests/ARE/MMAR01.ARE~ ~override/~
 	LPF fj_are_structure
 	  INT_VAR
 	  fj_loc_x       = 304
@@ -216,10 +216,10 @@ COPY ~MMDerilMansionExtended/ARE/MMAR01.ARE~ ~override/~
     END
 	
 // Ambush area
-COPY ~MMDerilMansionExtended/ARE/MMAR02.ARE~ ~override/~
+COPY ~DerilAndHisGuests/ARE/MMAR02.ARE~ ~override/~
 		
-EXTEND_TOP ~AR1004.BCS~ ~MMDerilMansionExtended/Script/MMAR1004.baf~
+EXTEND_TOP ~AR1004.BCS~ ~DerilAndHisGuests/Script/MMAR1004.baf~
 
-EXTEND_BOTTOM ~PLAYER1D.BCS~ ~MMDerilMansionExtended/Script/MMPLAYER.baf~
-EXTEND_BOTTOM ~CERND.BCS~ ~MMDerilMansionExtended/Script/MMCERND.baf~
+EXTEND_BOTTOM ~PLAYER1D.BCS~ ~DerilAndHisGuests/Script/MMPLAYER.baf~
+EXTEND_BOTTOM ~CERND.BCS~ ~DerilAndHisGuests/Script/MMCERND.baf~
 		

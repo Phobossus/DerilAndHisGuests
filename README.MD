@@ -1,24 +1,34 @@
-# Deril's Mansion extended - behind the locked door
+# Deril And His Guests - behind the locked door
 ![Select this option](Pictures/2.PNG)
 ---
 
 * Ever wondered who Deril's guests are and what exactly lies behind the locked door in his mansion?
 * Ever felt disappointed that his threats of "dealing with you later" never come to fruition?
 
-This mod expands Cernd's quest finale in case you go down the "peaceful" path during your encounter 
-with Deril, effectively leading up to Lagole Gon showing up and the two of them escaping after
-handing over Cernd's child.
+This mod expands Cernd's quest finale in case you go down the non-violent path during your encounter 
+with Deril.
 ![Select this option](Pictures/1.PNG)
+(Deril doesn't attack you -> Lagole Gon shows up to rush him -> 
+Deril hands over the child -> the two of them escape through a dimension door)
+---
+# Installation
 
-
-Following the resolution, Cernd voices his concerns over letting Deril go and you
-are then presented with two choices of how you want to address his potential return.
+1. Unpack the rar file in your game directory
+   (i.e D:\GOG Games\Baldurs Gate 2)
+2. Run Setup-DerilAndHisGuests.exe
+3. Follow the installation steps:
+- choose language [english, polish]
+- confirm installation
 
 ---
+# New content
+
+Following Deril's escape, Cernd voices his concerns over letting him go and you
+are then presented with two choices of how you want to address his potential return.
 
 ### Option 1 - Preemptive Strike
 You agree with Cernd that exposing yourselves to an ambush might not be the best idea.
-You two decide to meet up in Druid's Grove in 1 day, then 
+You two decide to meet up in the druid grove in 1 day, then 
 head back to Deril's mansion to finish him off before giving him the chance
 to come back for you.
 
